@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <h2>Login</h2>
+    <div class="main_div">
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
+        <div class="logolitverse">
+            <img src="{% static 'images/logolitverse.png' %}" alt="" width="500px">
+        </div>
 
-    <p>No account? <a href="{% url 'register' %}">Register</a></p>
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="login_head">
+                    <p>Login to Your Account</p>
+                </div>
+
+                <div class="username">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="pwd">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <div class="sbt_btn">
+                    <input type="submit" value="Login">
+                </div>
+                
+                <div class="dont_signup">
+
+                    <div class="dont">
+                        <p>Don't have an account?</p>
+                    </div>
+
+                    <div class="signup">
+                        <a href="{% url 'register' %}">Login</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
 </body>
 </html>
