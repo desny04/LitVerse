@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url("../images/bg\ image.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.form{
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.create_head{
+    padding-top: 30px;
+    text-align: center;
+    font-size:larger;
+    color:rgb(62, 0, 120);
+    font-weight: 500;
+}
+
+.username{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.username input{
+    width: 250px;
+    height: 30px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: 450;
+    color: rgb(125, 94, 154);
+    outline: none;
+}
+
+.username ::placeholder{
+    color: rgb(125, 94, 154);
+    padding: 5px;
+    font-weight: 450;
+}
+
+.pwd{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.pwd input{
+    width: 250px;
+    height: 30px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: 450;
+    color: rgb(125, 94, 154);
+    outline: none;
+}
+
+.pwd ::placeholder{
+    color: rgb(125, 94, 154);
+    padding: 5px;
+    font-weight: 450;
+}
+
+.sbt_btn{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.sbt_btn input{
+    width: 260px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 450;
+    color: white;
+    outline: none;
+    background-color: rgb(62, 0, 120);
+    border: none;
+}
+
+.already_login{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}

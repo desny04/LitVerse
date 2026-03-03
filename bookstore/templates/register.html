@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="main_div">
+
+        <div class="logolitverse">
+            <img src="{% static 'images/logolitverse.png' %}" alt="" width="500px">
+        </div>
+
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="create_head">
+                    <p>Create Your Account</p>
+                </div>
+
+                <div class="username">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="pwd">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <div class="sbt_btn">
+                    <input type="submit" value="Register">
+                </div>
+                
+                <div class="already_login">
+
+                    <div class="already">
+                        <p>Already have an account?</p>
+                    </div>
+
+                    <div class="login">
+                        <a href="{% url 'login' %}">Login</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
