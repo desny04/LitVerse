@@ -9,17 +9,34 @@
 </head>
 <body>
     <div class="nav">
-        <div class="litverselogo">
-            <img src="{% static 'images/logohorizont.png' %}" alt="" width="180px">
+
+        <div class="left_nav">
+            <div class="litverselogo">
+                <img src="{% static 'images/logohorizont.png' %}" alt="" width="180px">
+            </div>
         </div>
 
-        <div class="search_bar">
-            <input type="text" placeholder="Search books, authors, categories...">
+        <div class="right_nav">
+            <div class="search_bar">
+                <input type="text" placeholder="Search books, authors, categories...">
+            </div>
+
+            <div class="buttons">
+                <div class="wishlist">
+                    <a href=""><button>Wishlist</button></a>
+                </div>
+
+                <div class="cart">
+                    <a href=""><button>Cart</button></a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'logout' %}"><button>Logout</button></a>
+                </div>
+            </div>
+
         </div>
 
-        <div class="wishlist">
-            <a href=""><button><img src="{% static 'images/Minimalist icons set with notification.png' %}" alt="" width="50px "></button></a>
-        </div>
     </div>
     <!-- <h2>Welcome {{ request.user.username }}</h2>
 
@@ -35,6 +52,6 @@
         <p>No books available.</p>
     {% endfor %} -->
 
-    <a href="{% url 'logout' %}">Logout</a>
+    <!-- <a href="{% url 'logout' %}">Logout</a> -->
 </body>
 </html>

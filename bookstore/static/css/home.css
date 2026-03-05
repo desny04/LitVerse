@@ -2,3 +2,93 @@
     margin: 0px;
     padding: 0px;
 }
+
+.nav{
+    display: flex;
+    justify-content:left;
+    gap: 15%;
+    padding: 10px;
+}
+
+.left_nav{
+    padding-left: 15px;
+}
+
+.right_nav{
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding-top: 10px;
+}
+
+.search_bar input{
+    width: 35vw;
+    height: 40px;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 10px;
+    padding-left: 10px;
+    color: rgb(50, 50, 50);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.wishlist button{
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,
+        #ff9a3c 0%,     
+        #ff9a3c 1%,    
+        #b84cff 10%,    
+        #7b2be2 100%   
+    );
+}
+
+.cart button{
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,
+        #ff9a3c 0%,     
+        #ff9a3c 1%,    
+        #b84cff 10%,    
+        #7b2be2 100%   
+    );
+}
+
+.logout button{
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,
+        #ff9a3c 0%,     
+        #ff9a3c 1%,    
+        #b84cff 10%,    
+        #7b2be2 100%   
+    );
+}
+
