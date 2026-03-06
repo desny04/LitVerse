@@ -71,41 +71,65 @@
     <div class="categories_btns">
 
         <div class="all_books">
-            <a href=""><button>All Books</button></a>
+            <a href="?category=all" class="{% if category == 'all' %}active{% endif %}"><button>All Books</button></a>
         </div>
 
         <div class="fiction">
-            <a href=""><button>Fiction</button></a>
+            <a href="?category=fiction" class="{% if category == 'fiction' %}active{% endif %}"><button>Fiction</button></a>
         </div>
 
         <div class="mystery">
-            <a href=""><button>Mystery</button></a>
+            <a href="?category=mystery" class="{% if category == 'mystery' %}active{% endif %}"><button>Mystery</button></a>
         </div>
 
         <div class="sci_fic">
-            <a href=""><button>Science Fiction</button></a>
+            <a href="?category=scifi" class="{% if category == 'scifi' %}active{% endif %}"><button>Science Fiction</button></a>
         </div>
 
         <div class="romance">
-            <a href=""><button>Romance</button></a>
+            <a href="?category=romance" class="{% if category == 'romance' %}active{% endif %}"><button>Romance</button></a>
         </div>
 
         <div class="biography">
-            <a href=""><button>Biography</button></a>
+            <a href="?category=biography" class="{% if category == 'biography' %}active{% endif %}"><button>Biography</button></a>
         </div>
 
         <div class="self_help">
-            <a href=""><button>Self-Help</button></a>
+            <a href="?category=selfhelp" class="{% if category == 'selfhelp' %}active{% endif %}"><button>Self-Help</button></a>
         </div>
 
         <div class="business">
-            <a href=""><button>Business</button></a>
+            <a href="?category=business" class="{% if category == 'business' %}active{% endif %}"><button>Business</button></a>
         </div>
 
         <div class="history">
-            <a href=""><button>History</button></a>
+            <a href="?category=history" class="{% if category == 'history' %}active{% endif %}"><button>History</button></a>
         </div>
 
+
+    </div>
+
+    <div class="border">
+        
+    </div>
+
+    <div class="book-grid">
+
+        {% for book in books %}
+
+        <div class="book-card">
+
+            <img src="{{ book.image.url }}" width="100px">
+
+            <h3>{{ book.title }}</h3>
+
+            <p>{{ book.author }}</p>
+
+            <p>$ {{ book.price }}</p>
+
+        </div>
+
+        {% endfor %}
 
     </div>
     <!-- <h2>Welcome {{ request.user.username }}</h2>

@@ -238,5 +238,154 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
+.categories_btns{
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.categories_btns a.active button{ 
+    background:#2563eb;
+    color:white;
+}
+
+.all_books button{
+    width: 90px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.all_books button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.fiction button{
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.fiction button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.mystery button{
+    width: 85px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.mystery button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.sci_fic button{
+    width: 120px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.sci_fic button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.romance button{
+    width: 85px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.romance button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.biography button{
+    width: 100px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.biography button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.self_help button{
+    width: 100px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.self_help button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.business button{
+    width: 100px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.business button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.history button{
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.history button:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+
 
 
