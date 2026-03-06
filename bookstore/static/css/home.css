@@ -386,6 +386,34 @@
     background-color: rgb(226, 226, 226);
 }
 
+.border {
+    padding-top: 15px;
+    border-bottom: 1px solid rgb(228, 227, 227);  
+}
 
+.book-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:40px;
+    padding-top: 50px;
+    padding-left: 40px;
+}
 
+.book-card{
+    width: 220px;
+    height: 400px;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 25px;
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.08),
+    0 10px 20px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.book-card img{
+    width: 220px;
+    height: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 
