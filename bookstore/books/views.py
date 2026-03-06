@@ -1,8 +1,18 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from .models import Book
 
-@login_required
 def home(request):
-    books = Book.objects.all()
-    return render(request, 'home.html', {'books': books})
+
+    category = request.GET.get('category', 'all')
+
+    if category == "all":
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(category=category)
+
+    context = {
+        "books": books,
+        "category": category
+    }
+
+    return render(request, "home.html", context)

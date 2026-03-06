@@ -19,18 +19,27 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 150px;
+    gap: 50px;
+}
+
+.logolitverse img{
+    padding-top: 80px;
 }
 
 .form{
     width: 300px;
-    height: 350px;
+    height: 320px;
     background-color: white;
     align-items: center;
     border-radius: 30px;
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.08),
+    0 10px 20px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 .login_head{
-    padding-top: 30px;
+    padding-top: 25px;
     text-align: center;
     font-size:larger;
     color:rgb(62, 0, 120);
@@ -87,6 +96,7 @@ body{
 }
 
 .sbt_btn input{
+    cursor: pointer;
     width: 260px;
     height: 35px;
     border-radius: 10px;
@@ -98,8 +108,23 @@ body{
     border: none;
 }
 
+.sbt_btn  :hover{
+    background-color: rgb(41, 0, 88);
+}
+
 .dont_signup{
     padding-top: 20px;
     display: flex;
     justify-content: center;
 }
+
+.dont{
+    color:rgb(125, 94, 154) ;
+    font-weight: 450;
+}
+
+.signup a{
+    text-decoration: none;
+    color: rgb(62, 0, 120);
+}
+

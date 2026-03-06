@@ -8,6 +8,9 @@ def register(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+        if password != confirm_password:
+            return render(request, 'register.html', {'error': 'Passwords do not match'})
         User.objects.create_user(username=username, password=password)
         return redirect('login')
     return render(request, 'register.html')
