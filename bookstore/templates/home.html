@@ -111,19 +111,33 @@
 
     <div class="border"></div>
 
+    <div class="popular"><p>Popular & Recommended Books</p></div>
+
     <div class="book-grid">
 
         {% for book in books %}
 
         <div class="book-card">
 
-            <img src="{{ book.image.url }}" width="100px">
+            <div class="book-img">
+                <img src="{{ book.image.url }}" width="100px">
+            </div>
 
-            <h3>{{ book.title }}</h3>
+            <div class="category">
+                <p>{{ book.category }}</p>
+            </div>
 
-            <p>{{ book.author }}</p>
+            <div class="title">
+                <p>{{ book.title }}</p>
+            </div>
 
-            <p>$ {{ book.price }}</p>
+            <div class="author">
+                <p>{{ book.author }}</p>
+            </div>
+
+            <div class="price">
+                <p>$ {{ book.price }}</p>
+            </div>
 
         </div>
 
