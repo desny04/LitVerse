@@ -17,21 +17,23 @@
         </div>
 
         <div class="right_nav">
-            <div class="search_bar">
-                <input type="text" placeholder="Search books, authors, categories...">
-            </div>
+            <form method="GET" action="">
+                <div class="search_bar">
+                    <input type="text" name="q" placeholder="Search books, authors, categories...">
+                </div>
+            </form>
 
             <div class="buttons">
                 <div class="wishlist">
-                    <a href=""><button>Wishlist</button></a>
+                    <a href="" class="wishlist-btn"><img src="{% static 'images/wishlistnav.png' %}" class="icon-img" alt="" width="20px">Wishlist</a>
                 </div>
 
                 <div class="cart">
-                    <a href=""><button>Cart</button></a>
+                    <a href="" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
                 </div>
 
                 <div class="logout">
-                    <a href="{% url 'logout' %}"><button>Logout</button></a>
+                    <a href="{% url 'logout' %}" class="logout-btn"><img src="{% static 'images/logoutnav.png' %}" class="icon-img" alt="" width="16px">Logout</a>
                 </div>
             </div>
 
@@ -124,11 +126,15 @@
             </div>
 
             <div class="category">
-                <p>{{ book.category }}</p>
+                <p>{{ book.get_category_display}}</p>
             </div>
 
-            <div class="title">
-                <p>{{ book.title }}</p>
+            <div class="title-wish">
+                <div class="title">
+                    <p>{{ book.title }}</p>
+                </div>
+
+                <div class="wish-prod"><img src="{% static 'images/' %}" alt="" width="150px"></div>
             </div>
 
             <div class="author">
