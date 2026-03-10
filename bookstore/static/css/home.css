@@ -183,6 +183,39 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
+.sec-small{
+    height: 200px;
+}
+
+.backto{
+    padding-top: 40px;
+}
+
+.backto a{
+    padding-left: 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-cat-title{
+    padding-top: 10px;
+    padding-left: 40px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.book-avail{
+    padding-top: 10px;
+    padding-left: 40px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .discover_head{
     padding-top:3%;
     padding-left: 40px;
@@ -634,6 +667,11 @@ border-right:1px solid rgba(255,255,255,0.2);
     color: rgb(75, 75, 75);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 13px;
+}
+
+.quick-links a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .quick-links li{
