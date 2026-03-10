@@ -125,24 +125,34 @@
                 <img src="{{ book.image.url }}" width="100px">
             </div>
 
-            <div class="category">
-                <p>{{ book.get_category_display}}</p>
-            </div>
-
-            <div class="title-wish">
-                <div class="title">
-                    <p>{{ book.title }}</p>
+            <div class="category-prodwish">
+                
+                <div class="category">
+                    <p>{{ book.get_category_display}}</p>
                 </div>
 
-                <div class="wish-prod"><img src="{% static 'images/' %}" alt="" width="150px"></div>
+                <div class="wishlist-prod">
+                    <div class="wishlist-icon">❤</div>
+                </div>
+
+            </div>
+
+            <div class="title">
+                <p>{{ book.title }}</p>
             </div>
 
             <div class="author">
                 <p>{{ book.author }}</p>
             </div>
 
-            <div class="price">
-                <p>$ {{ book.price }}</p>
+            <div class="price-addcart">
+                <div class="price">
+                    <p>$ {{ book.price }}</p>
+                </div>
+
+                <div class="add-cart">
+                    <button>Add to Cart</button>
+                </div>
             </div>
 
         </div>
