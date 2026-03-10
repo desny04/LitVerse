@@ -121,6 +121,8 @@
 
         <div class="book-card">
 
+            <a href="{% url 'book_detail' book.id %}" class="book-link">
+
             <div class="book-img">
                 <img src="{{ book.image.url }}" width="100px">
             </div>
@@ -145,6 +147,8 @@
                 <p>{{ book.author }}</p>
             </div>
 
+            </a>
+
             <div class="price-addcart">
                 <div class="price">
                     <p>$ {{ book.price }}</p>
@@ -160,5 +164,57 @@
         {% endfor %}
 
     </div>
+
+    <div class="border"></div>
+
+    <div class="footer">
+
+        <div class="litverse-qoute">
+
+            <div class="litverse-foot-logo">
+                <img src="{% static 'images/logohorizont.png' %}" alt="" width="180px">
+            </div>
+
+            <div class="qoute">
+                <p>Your trusted online destination for discovering and </p>
+                <p>purchasing the best books across all genres.</p>
+            </div>
+
+        </div>
+
+        <div class="links-contact">
+            <div class="quick-links">
+                <p>Quick Links</p>
+                <ul type="none">
+                    <li>Home</li>
+                    <li>Fiction</li>
+                    <li>Self Help</li>
+                    <li>Business</li>
+                </ul>
+            </div>
+
+            <div class="customer-service">
+                <p>Customer Service</p>
+                <ul type="none">
+                    <li>About Us</li>
+                    <li>Shipping Info</li>
+                    <li>Return</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <p>Contact Us</p>
+                <ul type="none">
+                    <li>📍123 Book Street, Reading City, RC 12345</li>
+                    <li>📞(555) 123-4567o</li>
+                    <li>✉ info@bookstore.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
 </body>
 </html>

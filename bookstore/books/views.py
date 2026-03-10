@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import Book
 
@@ -25,7 +25,6 @@ def home(request):
 
     books = Book.objects.all()
 
-    # search filter
     if query:
         books = books.filter(
             Q(title__icontains=query) |
@@ -33,7 +32,7 @@ def home(request):
             Q(category__icontains=query)
         )
 
-    # category filter
+   
     if category and category != "all":
         books = books.filter(category=category)
 
@@ -44,3 +43,13 @@ def home(request):
     }
 
     return render(request, 'home.html', context)
+
+def book_detail(request, id):
+
+    book = get_object_or_404(Book, id=id)
+
+    context = {
+        'book': book
+    }
+
+    return render(request, 'book_detail.html', context)
