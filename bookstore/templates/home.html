@@ -88,6 +88,7 @@
         {% endif %}
     </div>
 
+    {% if not request.GET.category %}
     <div class="categories_btns">
 
         <div class="all_books">
@@ -126,12 +127,16 @@
             <a href="?category=history" class="{% if category == 'history' %}active{% endif %}"><button>History</button></a>
         </div>
 
-
     </div>
+    {% endif %}
 
     <div class="border"></div>
 
+    {% if category == "all" %}
+
     <div class="popular"><p>Popular & Recommended Books</p></div>
+
+    {% endif %}
 
     <div class="book-grid">
 

@@ -639,10 +639,11 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 .litverse-qoute{
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .qoute{
+    padding-top: 20px;
     color: rgb(75, 75, 75);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
@@ -678,6 +679,11 @@ border-right:1px solid rgba(255,255,255,0.2);
     padding-top: 8px;
 }
 
+.quick-links li:hover{
+    color: black;
+    cursor: pointer;
+}
+
 .customer-service p{
     padding-top: 20px;
     color: black;
@@ -696,6 +702,11 @@ border-right:1px solid rgba(255,255,255,0.2);
 
 .customer-service li{
     padding-top: 8px;
+}
+
+.customer-service li:hover{
+    color: black;
+    cursor: pointer;
 }
 
 .contact{
@@ -717,10 +728,14 @@ border-right:1px solid rgba(255,255,255,0.2);
     padding-top: 13px;
 }
 
+.contact li:hover{
+    color: black;
+    cursor: pointer;
+}
+
 .contact li{
     padding-top: 8px;
 }
-
 .copyright{
     padding-top: 30px;
     padding-bottom: 40px;

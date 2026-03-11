@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/book_detail.css' %}">
 </head>
 <body>
+
+    <div class="nav">
+
+        <div class="left_nav">
+            <div class="litverselogo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logohorizont.png' %}" alt="" width="180px"></a>
+            </div>
+        </div>
+
+        <div class="right_nav">
+            <form method="GET" action="">
+                <div class="search_bar">
+                    <input type="text" name="q" placeholder="Search books, authors, categories...">
+                </div>
+            </form>
+
+            <div class="buttons">
+                <div class="wishlist">
+                    <a href="" class="wishlist-btn"><img src="{% static 'images/wishlistnav.png' %}" class="icon-img" alt="" width="20px">Wishlist</a>
+                </div>
+
+                <div class="cart">
+                    <a href="" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'logout' %}" class="logout-btn"><img src="{% static 'images/logoutnav.png' %}" class="icon-img" alt="" width="16px">Logout</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="book-image">
+        <img src="{{ book.image.url }}" width="100px">
+    </div>
     <h1>{{ book.title }}</h1>
     <p>{{ book.author }}</p>
     <p>{{ book.price }}</p>
@@ -13,5 +52,56 @@
     <p>{{ book.publisher }}</p>
     <p>{{ book.publication_date }}</p>
     <p>{{ book.pages }}</p>
+
+
+    <div class="footer">
+
+        <div class="litverse-qoute">
+
+            <div class="litverse-foot-logo">
+                <img src="{% static 'images/logohorizont.png' %}" alt="" width="180px">
+            </div>
+
+            <div class="qoute">
+                <p>Your trusted online destination for discovering and </p>
+                <p>purchasing the best books across all genres.</p>
+            </div>
+
+        </div>
+
+        <div class="links-contact">
+            <div class="quick-links">
+                <p>Quick Links</p>
+                <ul type="none">
+                    <a href="{% url 'home' %}"><li>Home</li></a>
+                    <a href="?category=history"><li>History</li></a>
+                    <a href="?category=selfhelp"><li>Self Help</li></a>
+                    <a href="?category=business"><li>Business</li></a>
+                </ul>
+            </div>
+
+            <div class="customer-service">
+                <p>Customer Service</p>
+                <ul type="none">
+                    <li>About Us</li>
+                    <li>Shipping Info</li>
+                    <li>Return</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <p>Contact Us</p>
+                <ul type="none">
+                    <li>📍123 Book Street, Reading City, RC 12345</li>
+                    <li>📞(555) 123-4567o</li>
+                    <li>✉ info@bookstore.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
 </body>
 </html>

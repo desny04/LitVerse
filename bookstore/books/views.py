@@ -18,6 +18,8 @@ def home(request):
 
     return render(request, "home.html", context)
 
+
+
 def home(request):
 
     query = request.GET.get('q')
