@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
 </head>
 <body>
     <div class="nav">
@@ -42,83 +42,20 @@
     </div>
 
     <div class="main_section">
-        
-        <div class="discover_head">
-            <p>Discover Your Next Great Read</p>
+
+        <div class="backto">
+            <a href="{% url 'home' %}?category=all">← Back to home</a>
         </div>
 
-        <div class="explore_head">
-            <p>Explore our curated collection of bestsellers, classics, and hidden games</p>
+        <div class="hero-cat-title">
+            <p>{{ category.title }}</p>
         </div>
 
-        <div class="main_sec_btns">
-            <div class="explore_fiction">
-                <a href="{% url 'category_books' 'fiction' %}"><button>Fiction</button></a>
-            </div>
-
-            <div class="explore_mystery">
-                <a href="{% url 'category_books' 'mystery' %}"><button>Mystery</button></a>
-            </div>
-
-            <div class="explore_scific">
-                <a href="{% url 'category_books' 'scifi' %}"><button>Science Fiction</button></a>
-            </div>
-
-            <div class="explore_romance">
-                <a href="{% url 'category_books' 'romance' %}"><button>Romance</button></a>
-            </div>
-        </div>
-
-        
-    </div>
-
-    <div class="categories_btns">
-
-        <div class="all_books">
-            <a href="?category=all" class="{% if category == 'all' %}active{% endif %}"><button>All Books</button></a>
-        </div>
-
-        <div class="fiction">
-            <a href="?category=fiction" class="{% if category == 'fiction' %}active{% endif %}"><button>Fiction</button></a>
-        </div>
-
-        <div class="mystery">
-            <a href="?category=mystery" class="{% if category == 'mystery' %}active{% endif %}"><button>Mystery</button></a>
-        </div>
-
-        <div class="sci_fic">
-            <a href="?category=scifi" class="{% if category == 'scifi' %}active{% endif %}"><button>Science Fiction</button></a>
-        </div>
-
-        <div class="romance">
-            <a href="?category=romance" class="{% if category == 'romance' %}active{% endif %}"><button>Romance</button></a>
-        </div>
-
-        <div class="biography">
-            <a href="?category=biography" class="{% if category == 'biography' %}active{% endif %}"><button>Biography</button></a>
-        </div>
-
-        <div class="self_help">
-            <a href="?category=selfhelp" class="{% if category == 'selfhelp' %}active{% endif %}"><button>Self-Help</button></a>
-        </div>
-
-        <div class="business">
-            <a href="?category=business" class="{% if category == 'business' %}active{% endif %}"><button>Business</button></a>
-        </div>
-
-        <div class="history">
-            <a href="?category=history" class="{% if category == 'history' %}active{% endif %}"><button>History</button></a>
+        <div class="book-avail">
+            <p>{{ books.count }} books available</p>
         </div>
 
     </div>
-
-    <div class="border"></div>
-
-    {% if category == "all" %}
-
-    <div class="popular"><p>Popular & Recommended Books</p></div>
-
-    {% endif %}
 
     <div class="book-grid">
 
@@ -221,5 +158,6 @@
 
 
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
 </body>
 </html>

@@ -13,7 +13,7 @@
 
         <div class="left_nav">
             <div class="litverselogo">
-                <a href="{% url 'home' %}"><img src="{% static 'images/logohorizont.png' %}" alt="" width="180px"></a>
+                <a href="{% url 'home' %}?category=all"><img src="{% static 'images/logohorizont.png' %}" alt="" width="180px"></a>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
     </div>
 
     <div class="book-image">
-        <img src="{{ book.image.url }}" width="100px">
+        <img src="{{ book.image.url }}" width="300px">
     </div>
     <h1>{{ book.title }}</h1>
     <p>{{ book.author }}</p>
@@ -73,7 +73,7 @@
             <div class="quick-links">
                 <p>Quick Links</p>
                 <ul type="none">
-                    <a href="{% url 'home' %}"><li>Home</li></a>
+                    <a href="{% url 'home' %}?category=all"><li>Home</li></a>
                     <a href="?category=history"><li>History</li></a>
                     <a href="?category=selfhelp"><li>Self Help</li></a>
                     <a href="?category=business"><li>Business</li></a>
