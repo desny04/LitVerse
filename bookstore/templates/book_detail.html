@@ -40,18 +40,106 @@
 
         </div>
 
+        <div class="border"></div>
+
     </div>
 
-    <div class="book-image">
-        <img src="{{ book.image.url }}" width="300px">
+    <div class="backto">
+        <a href="{% url 'home' %}?category=all">← Back to home</a>
     </div>
-    <h1>{{ book.title }}</h1>
-    <p>{{ book.author }}</p>
-    <p>{{ book.price }}</p>
-    <p>{{ book.description }}</p>
-    <p>{{ book.publisher }}</p>
-    <p>{{ book.publication_date }}</p>
-    <p>{{ book.pages }}</p>
+
+    <div class="image-detail">
+
+        <div class="book-image">
+            <img src="{{ book.image.url }}" width="350px">
+        </div>
+
+        <div class="all-detail">
+
+            <div class="category">
+                <p>{{ book.get_category_display}}</p>
+            </div>
+
+            <div class="title">
+                <p>{{ book.title }}</p>
+            </div>
+
+            <div class="author">
+                <p>by {{ book.author}}</p>
+            </div>
+
+            <div class="price">
+                <p>${{ book.price }}</p>
+            </div>
+
+            <div class="about">
+                <p>About this book</p>
+            </div>
+
+            <div class="descr">
+                <p>{{ book.description }}</p>
+            </div>
+
+            <div class="publisher-date">
+
+                <div class="publisher-name">
+
+                    <div class="publisher">
+                        <p>Publisher</p>
+                    </div>
+
+                    <div class="publisher-name">
+                        <p>{{ book.publisher }}</p>
+                    </div>
+
+                </div>
+
+                <div class="publication-date">
+
+                    <div class="publication">
+                        <p>Publication Date</p>
+                    </div>
+
+                    <div class="date">
+                        <p>{{ book.publication_date }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+             <div class="isbn-pages">
+
+                <div class="isbn-num">
+
+                    <div class="isbn">
+                        <p>ISBN</p>
+                    </div>
+
+                    <div class="num-isbn">
+                        <p>{{ book.isbn }}</p>
+                    </div>
+
+                </div>
+
+                <div class="pages-num">
+
+                    <div class="pages">
+                        <p>Pages</p>
+                    </div>
+
+                    <div class="num-pages">
+                        <p>{{ book.pages }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 
     <div class="footer">
