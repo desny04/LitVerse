@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length|default:0 }}</span></a>
                 </div>
 
                 <div class="logout">
@@ -160,7 +160,7 @@
                 </div>
 
                 <div class="add-cart">
-                    <button>Add to Cart</button>
+                    <button onclick="addToCart('{{ book.id }}')">Add to Cart</button>
                 </div>
             </div>
 
@@ -221,5 +221,18 @@
 
 
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
+    <script>
+function addToCart(bookId){
+
+    fetch("/add-to-cart/" + bookId + "/")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("cart-count").innerText = data.cart_count;
+    });
+
+}
+</script>
+
 </body>
 </html>
