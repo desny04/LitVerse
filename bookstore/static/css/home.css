@@ -130,6 +130,21 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
+#cart-count{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logout-btn{
 display:flex;
 align-items:center;

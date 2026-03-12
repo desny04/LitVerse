@@ -5,6 +5,7 @@
 
 body{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .nav{
@@ -186,11 +187,6 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
-.border {
-    padding-top: 15px;
-    border-bottom: 1px solid rgb(228, 227, 227);  
-}
-
 .backto{
     padding-top: 100px;
 }
@@ -207,156 +203,48 @@ border-right:1px solid rgba(255,255,255,0.2);
     color: black;
 }
 
-.image-detail{
-    display: flex;
-    justify-content: space-between;
-    gap: 20%;
+.delete-btn a{
+    font-size:20px;
+    color:red;
+    text-decoration:none;
 }
 
-.book-image{
-    padding-top: 25px;
-    padding-left: 40px;
-    padding-bottom: 20px;
-}
-
-.book-image img{
-    border-radius: 15px;
-}
-
-.all-detail{
-    padding-top: 20px;
-    padding-right: 40px;
-}
-
-.category{
+.empty-cart-img{
+    padding-top: 120px;
     text-align: center;
-    width: 70px;
-    height: 22px;
-    border-radius: 15px;
-    color: blue;
-    background-color: rgb(210, 216, 255);
-    padding-top: 4px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: smaller;
 }
 
-.title{
-    padding-top: 10px;
-    font-size: 50px;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.author{
-    color: rgb(111, 111, 111);
-    font-size: 22px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.price{
+.empty{
+    text-align: center;
     padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-}
-
-.about{
-    padding-top: 20px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
 }
 
-.descr{
-    padding-top: 5px;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(111, 111, 111);
-}
-
-.date-publi-details{
-    padding-top: 20px;
-}
-
-.publisher-date{
-    padding-right: 100px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 50%;
-}
-
-.publisher{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.publisher-name{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.publication{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.date{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.isbn-pages{
-    padding-left: 28px;
-    padding-right: 190px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    gap: 42%;
-}
-
-.isbn{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.num-isbn{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.pages{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.num-pages{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.add-cart{
-    padding-top: 50px;
+.add-books{
     text-align: center;
+    padding-top: 10px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
 }
 
-.add-cart button{
+.browse-books{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.browse-books button{
     cursor: pointer;
-    width: 500px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     border-radius: 10px;
     border: none;
     outline: none;
     color: rgb(255, 255, 255);
-    font-size:15px;
+    font-size:14px;
     font-weight: 450;
     background: linear-gradient(
         to bottom,    
@@ -365,27 +253,13 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
-.add-cart button:hover{
+.browse-books button:hover{
     background: linear-gradient(
         to bottom,   
         #8c3bc3 30%,    
         #671ec7 100%   
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

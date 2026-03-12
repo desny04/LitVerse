@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length|default:0 }}</span></a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length }}</span></a>
                 </div>
 
                 <div class="logout">

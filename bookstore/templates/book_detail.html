@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length }}</span></a>
                 </div>
 
                 <div class="logout">
@@ -80,60 +80,66 @@
                 <p>{{ book.description }}</p>
             </div>
 
-            <div class="publisher-date">
+            <div class="date-publi-details">
+                <div class="publisher-date">
 
-                <div class="publisher-name">
+                    <div class="publisher-publiname">
 
-                    <div class="publisher">
-                        <p>Publisher</p>
+                        <div class="publisher">
+                            <p>Publisher</p>
+                        </div>
+
+                        <div class="publisher-name">
+                            <p>{{ book.publisher }}</p>
+                        </div>
+
                     </div>
 
-                    <div class="publisher-name">
-                        <p>{{ book.publisher }}</p>
+                    <div class="publication-date">
+
+                        <div class="publication">
+                            <p>Publication Date</p>
+                        </div>
+
+                        <div class="date">
+                            <p>{{ book.publication_date }}</p>
+                        </div>
+
                     </div>
 
                 </div>
 
-                <div class="publication-date">
+                <div class="isbn-pages">
 
-                    <div class="publication">
-                        <p>Publication Date</p>
+                    <div class="isbn-num">
+
+                        <div class="isbn">
+                            <p>ISBN</p>
+                        </div>
+
+                        <div class="num-isbn">
+                            <p>{{ book.isbn }}</p>
+                        </div>
+
                     </div>
 
-                    <div class="date">
-                        <p>{{ book.publication_date }}</p>
+                    <div class="pages-num">
+
+                        <div class="pages">
+                            <p>Pages</p>
+                        </div>
+
+                        <div class="num-pages">
+                            <p>{{ book.pages }}</p>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
 
-             <div class="isbn-pages">
-
-                <div class="isbn-num">
-
-                    <div class="isbn">
-                        <p>ISBN</p>
-                    </div>
-
-                    <div class="num-isbn">
-                        <p>{{ book.isbn }}</p>
-                    </div>
-
-                </div>
-
-                <div class="pages-num">
-
-                    <div class="pages">
-                        <p>Pages</p>
-                    </div>
-
-                    <div class="num-pages">
-                        <p>{{ book.pages }}</p>
-                    </div>
-
-                </div>
-
+            <div class="add-cart">
+                <button onclick="addToCart('{{ book.id }}')">Add to Cart</button>
             </div>
 
         </div>
@@ -191,5 +197,17 @@
 
 
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
+    <script>
+function addToCart(bookId){
+
+    fetch("/add-to-cart/" + bookId + "/")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("cart-count").innerText = data.cart_count;
+    });
+
+}
+</script>
 </body>
 </html>

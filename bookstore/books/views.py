@@ -1,9 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render,redirect, get_object_or_404
 from django.db.models import Q
 from .models import Book
 
-from django.shortcuts import render
-from .models import Book
 
 def home(request):
     category = request.GET.get('category')
@@ -110,3 +108,15 @@ def cart(request):
     }
 
     return render(request, "cart.html", context)
+
+
+def remove_from_cart(request, id):
+
+    cart = request.session.get('cart', {})
+
+    if str(id) in cart:
+        del cart[str(id)]
+
+    request.session['cart'] = cart
+
+    return redirect('cart')
