@@ -45,11 +45,11 @@
 
     {% if cart_items %}
 
-        {% for item in cart_items %}
+        <div class="backto">
+            <a href="{% url 'home' %}?category=all">← Back to home</a>
+        </div>
 
-            <div class="backto">
-                <a href="{% url 'home' %}?category=all">← Back to home</a>
-            </div>
+        {% for item in cart_items %}
 
             <div>
                 <img src="{{ item.book.image.url }}" width="80">
@@ -142,5 +142,6 @@
     <div class="copyright">
         <p>© 2026 BookStore. All rights reserved.</p>
     </div>
+    
 </body>
 </html>

@@ -272,80 +272,36 @@ border-right:1px solid rgba(255,255,255,0.2);
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(111, 111, 111);
+    padding-bottom: 20px;
 }
 
-.date-publi-details{
-    padding-top: 20px;
-}
-
-.publisher-date{
-    padding-right: 100px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 50%;
-}
-
-.publisher{
-    color: rgb(151, 151, 151);
+.book-info-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    max-width: 600px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-item .label{
     font-size: 14px;
+    color: #777;
+    margin-bottom: 4px;
 }
 
-.publisher-name{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.publication{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.date{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.isbn-pages{
-    padding-left: 28px;
-    padding-right: 190px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    gap: 42%;
-}
-
-.isbn{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.num-isbn{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.pages{
-    color: rgb(151, 151, 151);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-}
-
-.num-pages{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+.info-item .value{
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
 }
 
 .add-cart{
-    padding-top: 50px;
+    padding-top: 30px;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .add-cart button{
