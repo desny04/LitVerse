@@ -91,21 +91,22 @@ def cart(request):
     return render(request, "cart.html", context)
 
 
+
 def add_to_cart(request, id):
 
     cart = request.session.get('cart', {})
+    id = str(id)
 
-    if str(id) in cart:
-        cart[str(id)] += 1
+    if id in cart:
+        cart[id] += 1
     else:
-        cart[str(id)] = 1
+        cart[id] = 1
 
     request.session['cart'] = cart
 
     cart_count = sum(cart.values())
 
     return JsonResponse({'cart_count': cart_count})
-
 
 def cart(request):
 

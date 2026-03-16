@@ -207,7 +207,7 @@ border-right:1px solid rgba(255,255,255,0.2);
 
 
 .cart-item{
-    width: 70%;
+    width: 80%;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -322,11 +322,14 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
-
 .continue a{
     text-decoration: none;
-    align-items: center;
     color: #7b39d0;
+}
+
+.continue {
+    text-align:center;
+    margin-top:15px
 }
 
 .empty-cart-img{
