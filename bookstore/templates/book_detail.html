@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length }}</span></a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
                 </div>
 
                 <div class="logout">
@@ -163,15 +163,15 @@
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
 
     <script>
-function addToCart(bookId){
+    function addToCart(bookId){
 
-    fetch("/add-to-cart/" + bookId + "/")
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("cart-count").innerText = data.cart_count;
-    });
+        fetch("/add-to-cart/" + bookId + "/")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("cart-count").innerText = data.cart_count;
+        });
 
-}
-</script>
+    }
+    </script>
 </body>
 </html>

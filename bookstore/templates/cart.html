@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{{ request.session.cart|length }}</span></a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
                 </div>
 
                 <div class="logout">
@@ -49,26 +49,65 @@
             <a href="{% url 'home' %}?category=all">← Back to home</a>
         </div>
 
+        <div class="cart-title">
+            <p>Shopping Cart</p>
+        </div>
+
+        <div class="cart-item-order">
+
         {% for item in cart_items %}
 
-            <div>
+                <div class="cart-item">
+
                 <img src="{{ item.book.image.url }}" width="80">
 
-                <h3>{{ item.book.title }}</h3>
+                <div class="cart-details">
+                    <h3>{{ item.book.title }}</h3>
+                    <p>{{ item.book.author }}</p>
 
-                <p>Author: {{ item.book.author }}</p>
+                     <div class="quantity">
 
-                <p>Price: ${{ item.book.price }}</p>
+                        <a href="{% url 'update_cart' item.book.id 'decrease' %}" class="qty-btn">−</a>
 
-                <p>Quantity: {{ item.quantity }}</p>
+                        <span class="qty-number">{{ item.quantity }}</span>
+
+                        <a href="{% url 'update_cart' item.book.id 'increase' %}" class="qty-btn">+</a>
+
+                    </div>
+
+                </div>
+
+                <p class="price">${{ item.item_total }}</p>
 
                 <div class="delete-btn">
-                    <a href="{% url 'remove_from_cart' item.book.id %}">🗑</a>
+                    <a href="{% url 'remove_from_cart' item.book.id %}" >🗑</a>
+                </div>
+
+                </div>
+
+                {% endfor %}
+
+
+                <div class="order-summary">
+
+                    <h3>Order Summary</h3>
+
+                    <p>Subtotal <span>${{ subtotal }}</span></p>
+
+                    <p>Shipping <span>FREE</span></p>
+
+                    <p>Tax <span>${{ tax|floatformat:2 }}</span></p>
+
+                    <hr>
+
+                    <h3>Total <span>${{ total|floatformat:2 }}</span></h3>
+
+                    <button class="checkout-btn">Proceed to Checkout</button>
+
                 </div>
 
             </div>
 
-        {% endfor %}
 
     {% else %}
 

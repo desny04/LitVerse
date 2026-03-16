@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.db.models import Q
+from django.http import JsonResponse
+from decimal import Decimal
 from .models import Book
 
 
@@ -68,8 +70,7 @@ def book_detail(request, id):
     return render(request, 'book_detail.html', context)
 
 
-from django.http import JsonResponse
-from .models import Book
+
 
 def add_to_cart(request, id):
 
@@ -87,24 +88,36 @@ def add_to_cart(request, id):
     return JsonResponse({'cart_count': cart_count})
 
 
-# 
-
 def cart(request):
 
-    cart = request.session.get('cart', {})
+    cart = request.session.get("cart", {})
 
     books = Book.objects.filter(id__in=cart.keys())
 
     cart_items = []
+    subtotal = Decimal('0.00')
 
     for book in books:
+        qty = cart[str(book.id)]
+        item_total = book.price * qty
+        subtotal += item_total
+
         cart_items.append({
-            'book': book,
-            'quantity': cart[str(book.id)]
+            "book": book,
+            "quantity": qty,
+            "item_total": item_total
         })
 
+    shipping = Decimal('0.00')
+    tax = subtotal * Decimal('0.10')
+    total = subtotal + tax + shipping
+
     context = {
-        'cart_items': cart_items
+        "cart_items": cart_items,
+        "subtotal": subtotal,
+        "shipping": shipping,
+        "tax": tax,
+        "total": total
     }
 
     return render(request, "cart.html", context)
@@ -120,3 +133,25 @@ def remove_from_cart(request, id):
     request.session['cart'] = cart
 
     return redirect('cart')
+
+
+
+def update_cart(request, id, action):
+
+    cart = request.session.get('cart', {})
+    id = str(id)
+
+    if id in cart:
+
+        if action == "increase":
+            cart[id] += 1
+
+        elif action == "decrease":
+            cart[id] -= 1
+
+            if cart[id] <= 0:
+                del cart[id]
+
+    request.session["cart"] = cart
+
+    return redirect("cart")
