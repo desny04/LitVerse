@@ -69,7 +69,26 @@ def book_detail(request, id):
 
     return render(request, 'book_detail.html', context)
 
+def cart(request):
 
+    cart = request.session.get("cart", {})
+
+    books = Book.objects.filter(id__in=cart.keys())
+
+    cart_items = []
+
+    for book in books:
+        cart_items.append({
+            "book": book,
+            "quantity": cart[str(book.id)],
+            "item_total": book.price * cart[str(book.id)]
+        })
+
+    context = {
+        "cart_items": cart_items
+    }
+
+    return render(request, "cart.html", context)
 
 
 def add_to_cart(request, id):

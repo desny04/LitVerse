@@ -45,9 +45,6 @@
 
     {% if cart_items %}
 
-        <div class="backto">
-            <a href="{% url 'home' %}?category=all">← Back to home</a>
-        </div>
 
         <div class="cart-title">
             <p>Shopping Cart</p>
@@ -59,7 +56,7 @@
 
                 <div class="cart-item">
 
-                <img src="{{ item.book.image.url }}" width="80">
+                <a href="{% url 'book_detail' item.book.id %}"><img src="{{ item.book.image.url }}" width="80"></a>
 
                 <div class="cart-details">
                     <h3>{{ item.book.title }}</h3>
@@ -104,12 +101,16 @@
 
                     <button class="checkout-btn">Proceed to Checkout</button>
 
+                    <div class="continue">
+                        <a href="{% url 'home' %}?category=all"><p>continue shopping</p></a>
+                    </div>
+
                 </div>
 
             </div>
 
 
-    {% else %}
+    {% else %} 
 
     <div class="empty-cart-img">
         <img src="{% static 'images/emptycart.png' %}" alt="" width="70px">
