@@ -145,6 +145,11 @@ border-right:1px solid rgba(255,255,255,0.2);
     justify-content: center;
 }
 
+
+#cart-count:empty{
+    display: none;
+}
+
 .logout-btn{
 display:flex;
 align-items:center;

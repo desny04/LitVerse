@@ -145,6 +145,10 @@ border-right:1px solid rgba(255,255,255,0.2);
     justify-content: center;
 }
 
+#cart-count:empty{
+    display: none;
+}
+
 .logout-btn{
 display:flex;
 align-items:center;
@@ -197,7 +201,7 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 .cart-title p{
-    padding-top: 100px;
+    padding-top: 80px;
     padding-left: 20px;
     font-size:28px;
     font-weight:600;
@@ -207,6 +211,7 @@ border-right:1px solid rgba(255,255,255,0.2);
 
 
 .cart-item{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 80%;
     display:flex;
     align-items:center;
@@ -275,6 +280,7 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 .order-summary{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width:320px;
     background:white;
     padding:25px;
@@ -322,14 +328,16 @@ border-right:1px solid rgba(255,255,255,0.2);
     );
 }
 
-.continue a{
-    text-decoration: none;
-    color: #7b39d0;
+.continue p{
+    color:#671ec7 ;
+    padding-left: 100px;
 }
 
-.continue {
-    text-align:center;
-    margin-top:15px
+.continue a{
+    text-decoration: none;
+    color: #6c6767;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
 }
 
 .empty-cart-img{

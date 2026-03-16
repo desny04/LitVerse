@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{% if cart_count > 0 %}{{ cart_count }}{% endif %}</span></a>
                 </div>
 
                 <div class="logout">
@@ -103,7 +103,7 @@
             </div>
 
             <div class="add-cart">
-                <button onclick="addToCart('{{ book.id }}')">Add to Cart</button>
+                <button type="button" onclick="addToCart('{{ book.id }}')">Add to Cart</button>
             </div>
 
         </div>
@@ -163,15 +163,21 @@
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
 
     <script>
-    function addToCart(bookId){
+
+        function addToCart(bookId){
 
         fetch("/add-to-cart/" + bookId + "/")
         .then(response => response.json())
         .then(data => {
-            document.getElementById("cart-count").innerText = data.cart_count;
-        });
 
-    }
+        let cartCount = document.getElementById("cart-count")
+
+        cartCount.innerText = data.cart_count
+
+        })
+
+        }
+
     </script>
 </body>
 </html>

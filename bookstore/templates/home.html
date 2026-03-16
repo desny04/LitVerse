@@ -226,19 +226,19 @@
 
     <script>
 
-    function addToCart(bookId){
+        function addToCart(bookId){
 
-    fetch("/add-to-cart/" + bookId + "/")
-    .then(response => response.json())
-    .then(data => {
+        fetch("/add-to-cart/" + bookId + "/")
+        .then(response => response.json())
+        .then(data => {
 
-    let cartCount = document.getElementById("cart-count")
+        let cartCount = document.getElementById("cart-count")
 
-    cartCount.innerText = data.cart_count
+        cartCount.innerText = data.cart_count
 
-    })
+        })
 
-    }
+        }
 
     </script>
 

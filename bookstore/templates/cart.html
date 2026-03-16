@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart</a>
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{% if cart_count > 0 %}{{ cart_count }}{% endif %}</span></a>
                 </div>
 
                 <div class="logout">
@@ -61,6 +61,7 @@
                 <div class="cart-details">
                     <h3>{{ item.book.title }}</h3>
                     <p>{{ item.book.author }}</p>
+                    <p>{{ item.book.get_category_display }}</p>
 
                      <div class="quantity">
 
