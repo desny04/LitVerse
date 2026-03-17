@@ -149,3 +149,113 @@ body{
     text-decoration: none;
     color: rgb(62, 0, 120);
 }
+
+
+
+
+
+/* ===== SIMPLE RESPONSIVE CODE ===== */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .main_div {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 20px;
+    }
+    
+    .logolitverse img {
+        width: 180px !important;
+        padding-top: 0;
+    }
+    
+    .form {
+        width: 320px;
+        height: auto;
+        padding-bottom: 25px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+    body {
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .main_div {
+        padding-top: 0;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .logolitverse img {
+        width: 160px !important;
+    }
+    
+    .form {
+        width: 280px;
+        padding: 0 15px 20px 15px;
+    }
+    
+    .create_head p {
+        font-size: 18px;
+    }
+    
+    .username input,
+    .pwd input,
+    .cnf_pwd input {
+        width: 230px;
+    }
+    
+    .sbt_btn input {
+        width: 240px;
+    }
+    
+    .already_login {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .already p {
+        font-size: 14px;
+    }
+    
+    .login a {
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 375px) {
+    .logolitverse img {
+        width: 140px !important;
+    }
+    
+    .form {
+        width: 250px;
+    }
+    
+    .username input,
+    .pwd input,
+    .cnf_pwd input {
+        width: 200px;
+    }
+    
+    .sbt_btn input {
+        width: 210px;
+    }
+    
+    .create_head p {
+        font-size: 16px;
+    }
+    
+    .already p,
+    .login a {
+        font-size: 13px;
+    }
+}
