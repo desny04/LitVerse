@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wishlist.css' %}">
 </head>
 <body>
     <div class="nav">
@@ -41,73 +41,7 @@
 
     </div>
 
-    <div class="main_section">
 
-        <div class="backto">
-            <a href="{% url 'home' %}?category=all">← Back to home</a>
-        </div>
-
-        <div class="hero-cat-title">
-            <p>{{ category.title }}</p>
-        </div>
-
-        <div class="book-avail">
-            <p>{{ books.count }} books available</p>
-        </div>
-
-    </div>
-
-    <div class="book-grid">
-
-        {% for book in books %}
-
-        <div class="book-card">
-
-            <a href="{% url 'book_detail' book.id %}" class="book-link">
-
-            <div class="book-img">
-                <img src="{{ book.image.url }}" width="100px">
-            </div>
-
-            <div class="category-prodwish">
-                
-                <div class="category">
-                    <p>{{ book.get_category_display}}</p>
-                </div>
-
-                <div class="wishlist-prod">
-                    <div class="wishlist-icon">❤</div>
-                </div>
-
-            </div>
-
-            <div class="title">
-                <p>{{ book.title }}</p>
-            </div>
-
-            <div class="author">
-                <p>{{ book.author }}</p>
-            </div>
-
-            </a>
-
-            <div class="price-addcart">
-                <div class="price">
-                    <p>$ {{ book.price }}</p>
-                </div>
-
-                <div class="add-cart">
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-    <div class="border"></div>
 
     <div class="footer">
 
@@ -157,7 +91,15 @@
     </div>
 
 
-    <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+    <div class="copyright">
+        <p>© 2026 BookStore. All rights reserved.</p>
+    </div>
+
+
+
+
+
+
 
 </body>
 </html>

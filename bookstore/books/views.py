@@ -175,3 +175,24 @@ def update_cart(request, id, action):
     request.session["cart"] = cart
 
     return redirect("cart")
+
+def wishlist(request):
+
+    wishlist = request.session.get("wishlist", {})
+
+    books = Book.objects.filter(id__in=wishlist.keys())
+
+    wishlist_items = []
+
+    for book in books:
+        wishlist_items.append({
+            "book": book,
+            "quantity": wishlist[str(book.id)],
+            "item_total": book.price * wishlist[str(book.id)]
+        })
+
+    context = {
+        "wishlist_items": wishlist_items
+    }
+
+    return render(request, "wishlist.html", context)
