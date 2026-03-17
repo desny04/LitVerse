@@ -571,7 +571,18 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 .wishlist-icon:hover{
-    color: rgb(228, 108, 118);
+    color: rgb(146, 146, 146);
+}
+
+.wishlist-icon{
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    transition: 0.3s;
+}
+
+.wishlist-icon.active{
+    color: red;
 }
 
 .category{
@@ -767,88 +778,31 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 
-
-/* Responsive CSS - Add at the end of your existing CSS file */
-
-/* Tablet Devices */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .nav {
-        gap: 10%;
+        padding: 5px 20px;
+        gap: 30px;
     }
     
     .search_bar input {
         width: 30vw;
     }
     
-    .book-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-    
-    .footer {
-        gap: 100px;
-    }
-    
-    .links-contact {
-        gap: 100px;
-    }
-}
-
-/* Small Tablets */
-@media screen and (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        height: auto;
-        gap: 5px;
-        padding: 10px;
-    }
-    
-    .left_nav {
-        padding-left: 0;
-    }
-    
-    .right_nav {
-        width: 100%;
-        gap: 10px;
-        padding-top: 5px;
-    }
-    
-    .search_bar input {
-        width: 60vw;
-    }
-    
     .buttons {
         gap: 10px;
     }
     
-    .main_section {
-        padding-top: 100px;
-        height: auto;
-        padding-bottom: 30px;
+    .wishlist, .cart, .logout {
+        width: 85px;
     }
     
     .discover_head {
-        font-size: 40px;
+        font-size: 45px;
         padding-left: 30px;
-    }
-    
-    .explore_head {
-        font-size: 18px;
-        padding-left: 30px;
-    }
-    
-    .main_sec_btns {
-        padding-left: 30px;
-        flex-wrap: wrap;
-    }
-    
-    .categories_btns {
-        padding-left: 30px;
-        flex-wrap: wrap;
     }
     
     .book-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr) !important;
         padding-left: 30px;
         padding-right: 30px;
         gap: 20px;
@@ -856,48 +810,40 @@ border-right:1px solid rgba(255,255,255,0.2);
     
     .book-card {
         width: 100%;
-        height: auto;
-        min-height: 480px;
-    }
-    
-    .book-img img {
-        width: 100%;
-        height: auto;
-        max-height: 280px;
+        max-width: 240px;
     }
     
     .footer {
-        gap: 50px;
-        height: auto;
-        flex-wrap: wrap;
-        padding-bottom: 30px;
+        gap: 80px;
     }
     
     .links-contact {
-        gap: 40px;
-        flex-wrap: wrap;
+        gap: 60px;
     }
 }
 
-/* Mobile Devices */
-@media screen and (max-width: 480px) {
+
+@media screen and (min-width: 426px) and (max-width: 767px) {
     .nav {
-        padding: 8px;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
     }
     
-    .litverselogo img {
-        width: 140px;
+    .left_nav {
+        padding-left: 0;
     }
     
     .right_nav {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+        gap: 10px;
+        padding-top: 0;
     }
     
     .search_bar input {
-        width: 85vw;
-        height: 38px;
-        font-size: 14px;
+        width: 100%;
     }
     
     .buttons {
@@ -907,92 +853,53 @@ border-right:1px solid rgba(255,255,255,0.2);
     
     .wishlist, .cart, .logout {
         width: 90px;
-        height: 35px;
-        font-size: 13px;
     }
     
     .main_section {
-        padding-top: 110px;
-        padding-bottom: 25px;
+        padding-top: 120px;
+        height: auto;
+        padding-bottom: 30px;
     }
     
     .discover_head {
         font-size: 32px;
         padding-left: 20px;
-        padding-right: 20px;
     }
     
     .explore_head {
         font-size: 16px;
         padding-left: 20px;
-        padding-right: 20px;
     }
     
     .main_sec_btns {
         padding-left: 20px;
-        padding-right: 20px;
-        gap: 10px;
         flex-wrap: wrap;
     }
     
-    .explore_fiction button,
-    .explore_mystery button,
-    .explore_scific button,
-    .explore_romance button {
-        width: auto;
-        padding: 0 15px;
-        height: 32px;
-        font-size: 14px;
-    }
-    
     .categories_btns {
-        padding-left: 15px;
-        padding-right: 15px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 8px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .categories_btns > div {
-        flex: 0 0 auto;
-    }
-    
-    .categories_btns button {
-        width: auto !important;
-        padding: 0 15px;
-        white-space: nowrap;
-        font-size: 13px;
-        height: 32px;
-    }
-    
-    .popular {
+        flex-wrap: wrap;
         padding-left: 20px;
-        font-size: 18px;
+        justify-content: center;
     }
     
     .book-grid {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 25px;
-        justify-items: center;
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 15px;
     }
     
     .book-card {
         width: 100%;
-        max-width: 280px;
+        max-width: 200px;
         height: auto;
-        min-height: 450px;
+        min-height: 420px;
     }
     
     .book-img img {
-        height: auto;
-        max-height: 260px;
-    }
-    
-    .category-prodwish {
-        gap: 20px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
     
     .title {
@@ -1000,96 +907,96 @@ border-right:1px solid rgba(255,255,255,0.2);
     }
     
     .author {
-        font-size: 13px;
+        font-size: 12px;
     }
     
     .price-addcart {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
-    }
-    
-    .price {
-        padding-top: 20px;
-        font-size: 18px;
+        padding-top: 15px;
     }
     
     .add-cart {
-        padding-top: 0;
-        padding-right: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-right: 0;
         width: 100%;
     }
     
     .add-cart button {
         width: 100%;
-        height: 32px;
-        font-size: 13px;
     }
     
     .footer {
         flex-direction: column;
-        gap: 30px;
-        padding: 30px 20px;
         height: auto;
-    }
-    
-    .litverse-qoute {
-        padding-top: 0;
-        text-align: center;
-    }
-    
-    .litverse-foot-logo img {
-        width: 160px;
-    }
-    
-    .qoute p {
-        font-size: 13px;
+        gap: 30px;
+        padding: 30px;
     }
     
     .links-contact {
-        flex-direction: column;
-        gap: 25px;
-        width: 100%;
-    }
-    
-    .quick-links,
-    .customer-service,
-    .contact {
-        text-align: center;
-        padding-right: 0;
-    }
-    
-    .quick-links p,
-    .customer-service p,
-    .contact p {
-        padding-top: 0;
-    }
-    
-    .quick-links ul,
-    .customer-service ul,
-    .contact ul {
-        padding-left: 0;
-        text-align: center;
-    }
-    
-    .contact li {
-        display: flex;
-        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
         justify-content: center;
-        gap: 5px;
-    }
-    
-    .copyright {
-        padding: 20px 15px 30px;
-        font-size: 12px;
     }
 }
 
-/* Small Mobile Devices */
-@media screen and (max-width: 360px) {
+
+@media screen and (max-width: 425px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+    }
+    
+    .left_nav img {
+        width: 140px !important;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding-top: 0;
+    }
+    
+    .search_bar input {
+        width: 100%;
+        height: 36px;
+    }
+    
+    .buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 80px;
+        height: 34px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+    
+    .wishlist-btn img, .cart-btn img, .logout-btn img {
+        width: 14px !important;
+    }
+    
+    .main_section {
+        padding-top: 130px;
+        height: auto;
+        padding-bottom: 25px;
+    }
+    
     .discover_head {
-        font-size: 28px;
+        font-size: 26px;
         padding-left: 15px;
     }
     
@@ -1099,53 +1006,89 @@ border-right:1px solid rgba(255,255,255,0.2);
     }
     
     .main_sec_btns {
+        flex-direction: column;
+        align-items: center;
         padding-left: 15px;
+        gap: 10px;
+    }
+    
+    .explore_fiction button,
+    .explore_mystery button,
+    .explore_scific button,
+    .explore_romance button {
+        width: 150px !important;
+    }
+    
+    .categories_btns {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 8px;
+    }
+    
+    .all_books, .fiction, .mystery, .sci_fic, .romance, .biography, .self_help, .business, .history {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .all_books button, .fiction button, .mystery button, .sci_fic button, .romance button, .biography button, .self_help button, .business button, .history button {
+        width: 100% !important;
+    }
+    
+    .popular {
+        padding-left: 15px;
+        font-size: 18px;
+    }
+    
+    .book-grid {
+        grid-template-columns: 1fr !important;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px;
     }
     
     .book-card {
-        max-width: 250px;
-        min-height: 420px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+        min-height: 460px;
     }
     
     .book-img img {
-        max-height: 240px;
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
     }
     
-    .title {
-        font-size: 15px;
+    .price-addcart {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .add-cart {
+        padding-right: 0;
+        width: 100%;
     }
     
     .add-cart button {
-        height: 30px;
-        font-size: 12px;
+        width: 100%;
     }
     
-    .contact li {
-        font-size: 13px;
-        flex-wrap: wrap;
+    .footer {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        padding: 25px 20px;
+        text-align: center;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .quick-links, .customer-service, .contact {
+        padding-right: 0;
     }
 }
-
-/* Fix for wishlist count badge */
-#cart-count {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-}
-
-/* Ensure images don't overflow */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Hide scrollbar for categories but keep functionality */
-.categories_btns::-webkit-scrollbar {
-    height: 3px;
-}
-
-.categories_btns::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
-}
-

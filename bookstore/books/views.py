@@ -176,23 +176,41 @@ def update_cart(request, id, action):
 
     return redirect("cart")
 
+
+def toggle_wishlist(request, id):
+
+    wishlist = request.session.get('wishlist', [])
+
+    id = str(id)   
+    if id in wishlist:
+        wishlist.remove(id)
+        in_wishlist = False
+    else:
+        wishlist.append(id)
+        in_wishlist = True
+
+    request.session['wishlist'] = wishlist
+
+    return JsonResponse({'in_wishlist': in_wishlist})
+
+
 def wishlist(request):
 
-    wishlist = request.session.get("wishlist", {})
+    wishlist = request.session.get('wishlist', [])
 
-    books = Book.objects.filter(id__in=wishlist.keys())
+    books = Book.objects.filter(id__in=wishlist)
 
-    wishlist_items = []
+    return render(request, 'wishlist.html', {'books': books})
 
-    for book in books:
-        wishlist_items.append({
-            "book": book,
-            "quantity": wishlist[str(book.id)],
-            "item_total": book.price * wishlist[str(book.id)]
-        })
+def remove_from_wishlist(request, id):
 
-    context = {
-        "wishlist_items": wishlist_items
-    }
+    wishlist = request.session.get('wishlist', [])
 
-    return render(request, "wishlist.html", context)
+    id = str(id)
+
+    if id in wishlist:
+        wishlist.remove(id)
+
+    request.session['wishlist'] = wishlist
+
+    return redirect('wishlist')

@@ -129,7 +129,7 @@
             <a href="{% url 'book_detail' book.id %}" class="book-link">
 
             <div class="book-img">
-                <img src="{{ book.image.url }}" width="100px">
+                <a href="{% url 'book_detail' book.id %}" class="book-link"><img src="{{ book.image.url }}" width="100px"></a>
             </div>
 
             <div class="category-prodwish">
@@ -139,7 +139,11 @@
                 </div>
 
                 <div class="wishlist-prod">
-                    <div class="wishlist-icon">❤</div>
+                    <div class="wishlist-icon 
+{% if book.id|stringformat:"s" in request.session.wishlist %}active{% endif %}"
+onclick="toggleWishlist('{{ book.id }}', this)">
+❤
+</div>
                 </div>
 
             </div>
@@ -151,8 +155,6 @@
             <div class="author">
                 <p>{{ book.author }}</p>
             </div>
-
-            </a>
 
             <div class="price-addcart">
                 <div class="price">
@@ -239,6 +241,26 @@
         })
 
         }
+
+    </script>
+
+    <script>
+
+    function toggleWishlist(bookId, element){
+
+    fetch("/toggle-wishlist/" + bookId + "/")
+    .then(response => response.json())
+    .then(data => {
+
+    if(data.in_wishlist){
+        element.classList.add("active")
+    }else{
+        element.classList.remove("active")
+    }
+
+    })
+
+    }
 
     </script>
 

@@ -27,7 +27,7 @@
 
             <div class="buttons">
                 <div class="wishlist">
-                    <a href="" class="wishlist-btn"><img src="{% static 'images/wishlistnav.png' %}" class="icon-img" alt="" width="20px">Wishlist</a>
+                    <a href="{% url 'wishlist' %}" class="wishlist-btn"><img src="{% static 'images/wishlistnav.png' %}" class="icon-img" alt="" width="20px">Wishlist</a>
                 </div>
 
                 <div class="cart">
@@ -50,65 +50,69 @@
             <p>Shopping Cart</p>
         </div>
 
-        <div class="cart-item-order">
+        <div class="cart-container">
 
-        {% for item in cart_items %}
+            <div class="cart-items-list">
 
-                <div class="cart-item">
+                {% for item in cart_items %}
 
-                <a href="{% url 'book_detail' item.book.id %}"><img src="{{ item.book.image.url }}" width="80"></a>
+                    <div class="cart-item">
 
-                <div class="cart-details">
-                    <h3>{{ item.book.title }}</h3>
-                    <p>{{ item.book.author }}</p>
-                    <p>{{ item.book.get_category_display }}</p>
+                        <a href="{% url 'book_detail' item.book.id %}"><img src="{{ item.book.image.url }}" width="80"></a>
 
-                     <div class="quantity">
+                        <div class="cart-details">
+                            <h3>{{ item.book.title }}</h3>
+                            <p>{{ item.book.author }}</p>
+                            <p>{{ item.book.get_category_display }}</p>
 
-                        <a href="{% url 'update_cart' item.book.id 'decrease' %}" class="qty-btn">−</a>
+                            <div class="quantity">
 
-                        <span class="qty-number">{{ item.quantity }}</span>
+                                <a href="{% url 'update_cart' item.book.id 'decrease' %}" class="qty-btn">−</a>
 
-                        <a href="{% url 'update_cart' item.book.id 'increase' %}" class="qty-btn">+</a>
+                                <span class="qty-number">{{ item.quantity }}</span>
+
+                                <a href="{% url 'update_cart' item.book.id 'increase' %}" class="qty-btn">+</a>
+
+                            </div>
+
+                        </div>
+
+                        <p class="price">${{ item.item_total }}</p>
+
+                        <div class="delete-btn">
+                            <a href="{% url 'remove_from_cart' item.book.id %}" >🗑</a>
+                        </div>
 
                     </div>
-
-                </div>
-
-                <p class="price">${{ item.item_total }}</p>
-
-                <div class="delete-btn">
-                    <a href="{% url 'remove_from_cart' item.book.id %}" >🗑</a>
-                </div>
-
-                </div>
 
                 {% endfor %}
 
+            </div>
 
-                <div class="order-summary">
 
-                    <h3>Order Summary</h3>
+            <div class="order-summary">
 
-                    <p>Subtotal <span>${{ subtotal }}</span></p>
+                <h3>Order Summary</h3>
 
-                    <p>Shipping <span>FREE</span></p>
+                <p>Subtotal <span>${{ subtotal }}</span></p>
 
-                    <p>Tax <span>${{ tax|floatformat:2 }}</span></p>
+                <p>Shipping <span>FREE</span></p>
 
-                    <hr>
+                <p>Tax <span>${{ tax|floatformat:2 }}</span></p>
 
-                    <h3>Total <span>${{ total|floatformat:2 }}</span></h3>
+                <hr>
 
-                    <button class="checkout-btn">Proceed to Checkout</button>
+                <h3>Total <span>${{ total|floatformat:2 }}</span></h3>
 
-                    <div class="continue">
-                        <a href="{% url 'home' %}?category=all"><p>continue shopping</p></a>
-                    </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
 
+                <div class="continue">
+                    <a href="{% url 'home' %}?category=all"><p>continue shopping</p></a>
                 </div>
 
             </div>
+        
+        </div>
 
 
     {% else %} 
