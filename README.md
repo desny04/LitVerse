@@ -1,8 +1,8 @@
-LitVerse – Online Book Store
+#LitVerse – Online Book Store#
 
 LitVerse is a web-based online bookstore that allows users to browse books, view details, manage a shopping cart, and purchase books easily. The project is designed to provide a simple and user-friendly book shopping experience.
 
-Features:
+##Features:##
 
 User authentication (Sign up / Login / Logout)
 Browse books by categories
@@ -14,7 +14,7 @@ Wishlist feature
 Responsive and clean user interface
 Dynamic cart count in the navigation bar
 
-Tech Stack
+##Tech Stack##
 
 Frontend
 HTML5
