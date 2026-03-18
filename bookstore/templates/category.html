@@ -59,6 +59,56 @@
 
     <div class="book-grid">
 
+        <div class="chat-icon" onclick="toggleChatbox()">
+       
+        <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+        </svg>
+
+        <span class="tooltip">Chat box</span>
+    </div>
+
+   
+    <div class="chatbox-container" id="chatboxContainer">
+        <div class="chatbox">
+            <div class="chat-header">
+                <h3>🤖 Support Bot</h3>
+                <button class="close-btn" onclick="toggleChatbox()">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hi! 👋 I'm your assistant. Please select a question below:
+                </div>
+            </div>
+            
+
+            <div class="questions-section">
+                <div class="questions-title">📋 Common Questions:</div>
+                <div class="question-buttons">
+                    <button class="question-btn" onclick="askQuestion('How do I create an account?')">
+                        📝 Create account
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('What are your prices?')">
+                        💰 Prices
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('How can I contact support?')">
+                        📞 Contact support
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('Do you have a mobile app?')">
+                        📱 Mobile app
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('What are your business hours?')">
+                        ⏰ Business hours
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('How do I reset my password?')">
+                        🔑 Reset password
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
         {% for book in books %}
 
         <div class="book-card">
@@ -158,6 +208,99 @@
 
 
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
+    <script>
+        function toggleChatbox() {
+            const chatbox = document.getElementById('chatboxContainer');
+            if (chatbox.style.display === 'none' || chatbox.style.display === '') {
+                chatbox.style.display = 'block';
+            } else {
+                chatbox.style.display = 'none';
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            
+           
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const messagesDiv = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = '<span></span><span></span><span></span>';
+            messagesDiv.appendChild(typingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function askQuestion(question) {
+    
+            addMessage(question, 'user');
+            
+          
+            showTypingIndicator();
+            
+        
+            setTimeout(() => {
+                removeTypingIndicator();
+                
+              
+                let response = '';
+                switch(question) {
+                    case 'How do I create an account?':
+                        response = 'To create an account, click the "Sign Up" button on the top right corner and fill in your details. It takes less than 2 minutes!';
+                        break;
+                    case 'What are your prices?':
+                        response = 'We have flexible pricing plans starting from $9.99/month. Would you like me to send you the detailed pricing guide?';
+                        break;
+                    case 'How can I contact support?':
+                        response = 'You can reach our support team at support@example.com or use the live chat during business hours. We typically respond within 2 hours.';
+                        break;
+                    case 'Do you have a mobile app?':
+                        response = 'Yes! We have mobile apps for both iOS and Android. You can download them from the App Store or Google Play Store.';
+                        break;
+                    case 'What are your business hours?':
+                        response = 'Our support team is available Monday-Friday, 9 AM to 6 PM EST. You can still send messages anytime and we\'ll respond the next business day.';
+                        break;
+                    case 'How do I reset my password?':
+                        response = 'Click on "Forgot Password" on the login page and we\'ll send you a reset link to your email. The link expires in 24 hours.';
+                        break;
+                    default:
+                        response = 'Thanks for your question! Let me find the best answer for you.';
+                }
+                
+                addMessage(response, 'bot');
+                
+             
+                setTimeout(() => {
+                    addMessage('Is there anything else I can help you with? Just click another question above! 👆', 'bot');
+                }, 500);
+            }, 1500);
+        }
+
+        document.addEventListener('click', function(event) {
+            const chatbox = document.getElementById('chatboxContainer');
+            const chatIcon = document.querySelector('.chat-icon');
+            
+            if (!chatbox.contains(event.target) && !chatIcon.contains(event.target) && chatbox.style.display === 'block') {
+                chatbox.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
