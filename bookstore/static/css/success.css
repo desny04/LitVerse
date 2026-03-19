@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+.success-container{
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.checkmark{
+    font-size: 60px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.home-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg,#6a11cb,#2575fc);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}

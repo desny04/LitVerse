@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+</head>
+<body>
+
+<div class="checkout-container">
+
+    <h2>Checkout</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Payment Method</label>
+            <select name="payment">
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Card</option>
+            </select>
+        </div>
+
+        <button type="submit" class="place-order">Place Order</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

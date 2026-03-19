@@ -3,6 +3,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from decimal import Decimal
 from .models import Book
+from .models import Order, OrderItem
 
 
 def home(request):
@@ -214,3 +215,77 @@ def remove_from_wishlist(request, id):
     request.session['wishlist'] = wishlist
 
     return redirect('wishlist')
+
+
+
+
+
+def checkout(request):
+
+    cart = request.session.get('cart', {})
+
+    if request.method == "POST":
+
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        address = request.POST.get("address")
+        payment = request.POST.get("payment")
+
+        total = 0
+
+        # create order
+        order = Order.objects.create(
+            user=request.user,
+            name=name,
+            email=email,
+            address=address,
+            payment_method=payment,
+            total=0
+        )
+
+        for book_id, quantity in cart.items():
+            book = Book.objects.get(id=book_id)
+            item_total = book.price * quantity
+            total += item_total
+
+            OrderItem.objects.create(
+                order=order,
+                book=book,
+                quantity=quantity
+            )
+
+        order.total = total
+        order.save()
+
+        # ✅ CLEAR CART
+        request.session['cart'] = {}
+
+        return redirect('success')
+
+    return render(request, "checkout.html")
+
+
+
+def success(request):
+    return render(request, "success.html")
+
+
+def my_orders(request):
+
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+
+    return render(request, "my_orders.html", {
+        'orders': orders
+    })
+
+
+
+
+def cancel_order(request, order_id):
+    order = Order.objects.get(id=order_id, user=request.user)
+
+    if order.status == 'pending':
+        order.status = 'cancelled'
+        order.save()
+
+    return redirect('my_orders')

@@ -70,23 +70,23 @@
             <div class="questions-section">
                 <div class="questions-title">📋 Common Questions:</div>
                 <div class="question-buttons">
-                    <button class="question-btn" onclick="askQuestion('How do I create an account?')">
-                        📝 Create account
+                    <button class="question-btn" onclick="askQuestion('How long does shipping take?')">
+                        Shipping Time
                     </button>
                     <button class="question-btn" onclick="askQuestion('What are your prices?')">
-                        💰 Prices
+                         Prices
                     </button>
                     <button class="question-btn" onclick="askQuestion('How can I contact support?')">
-                        📞 Contact support
+                        Contact support
                     </button>
-                    <button class="question-btn" onclick="askQuestion('Do you have a mobile app?')">
-                        📱 Mobile app
+                    <button class="question-btn" onclick="askQuestion('What is your return policy?')">
+                        Return Policy
                     </button>
-                    <button class="question-btn" onclick="askQuestion('What are your business hours?')">
-                        ⏰ Business hours
+                    <button class="question-btn" onclick="askQuestion('Do you ship internationally?')">
+                        International Orders
                     </button>
-                    <button class="question-btn" onclick="askQuestion('How do I reset my password?')">
-                        🔑 Reset password
+                    <button class="question-btn" onclick="askQuestion('What if I receive a damaged book?')">
+                        Damaged Product
                     </button>
                 </div>
             </div>
@@ -127,7 +127,7 @@
 
                         </div>
 
-                        <p class="price">${{ item.item_total }}</p>
+                        <p class="price">₹{{ item.item_total }}</p>
 
                         <div class="delete-btn">
                             <a href="{% url 'remove_from_cart' item.book.id %}" >🗑</a>
@@ -144,17 +144,19 @@
 
                 <h3>Order Summary</h3>
 
-                <p>Subtotal <span>${{ subtotal }}</span></p>
+                <p>Subtotal <span>₹{{ subtotal }}</span></p>
 
                 <p>Shipping <span>FREE</span></p>
 
-                <p>Tax <span>${{ tax|floatformat:2 }}</span></p>
+                <p>Tax <span>₹{{ tax|floatformat:2 }}</span></p>
 
                 <hr>
 
-                <h3>Total <span>${{ total|floatformat:2 }}</span></h3>
+                <h3>Total <span>₹{{ total|floatformat:2 }}</span></h3>
 
-                <button class="checkout-btn">Proceed to Checkout</button>
+                <a href="{% url 'checkout' %}">
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                </a>
 
                 <div class="continue">
                     <a href="{% url 'home' %}?category=all"><p>continue shopping</p></a>
@@ -293,23 +295,23 @@
               
                 let response = '';
                 switch(question) {
-                    case 'How do I create an account?':
-                        response = 'To create an account, click the "Sign Up" button on the top right corner and fill in your details. It takes less than 2 minutes!';
+                    case 'How long does shipping take?':
+                        response = 'Delivery typically takes 3-5 business days for standard shipping within the continental US. Express shipping (1-2 business days) is available at checkout. International orders may take 7-14 business days depending on customs clearance.';
                         break;
                     case 'What are your prices?':
-                        response = 'We have flexible pricing plans starting from $9.99/month. Would you like me to send you the detailed pricing guide?';
+                        response = 'We have flexible pricing plans starting from ₹300/month. Would you like me to send you the detailed pricing guide?';
                         break;
                     case 'How can I contact support?':
                         response = 'You can reach our support team at support@example.com or use the live chat during business hours. We typically respond within 2 hours.';
                         break;
-                    case 'Do you have a mobile app?':
-                        response = 'Yes! We have mobile apps for both iOS and Android. You can download them from the App Store or Google Play Store.';
+                    case 'What is your return policy?':
+                        response = 'We accept returns within 30 days of delivery. Books must be unmarked and in their original condition. Simply visit our Returns Center to print a free shipping label. Refunds are processed within 5-7 business days after we receive the item.';
                         break;
-                    case 'What are your business hours?':
-                        response = 'Our support team is available Monday-Friday, 9 AM to 6 PM EST. You can still send messages anytime and we\'ll respond the next business day.';
+                    case 'Do you ship internationally?':
+                        response = '"Yes, we ship to over 50 countries! Rates: Calculated at checkout based on weight Delivery: *7-21 business days* Customs: Import duties/taxes may apply (not included in our prices) Tracking: Included with all international orders';
                         break;
-                    case 'How do I reset my password?':
-                        response = 'Click on "Forgot Password" on the login page and we\'ll send you a reset link to your email. The link expires in 24 hours.';
+                    case 'What if I receive a damaged book?':
+                        response = '"We are so sorry that happened! Here is what to do:Email photos of the damage within 48 hours of delivery Choose your resolution:Full refund (including return shipping)Immediate replacement at no cost 20% partial refund if you keep the book Most issues are resolved within 24 hours!"';
                         break;
                     default:
                         response = 'Thanks for your question! Let me find the best answer for you.';

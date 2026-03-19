@@ -12,7 +12,7 @@ body{
     justify-content:left;
     position:fixed;   
     width:100%;
-    gap: 20%;
+    gap: 15%;
     padding: 5px;
     height: 60px;
     background-color: white;
@@ -27,7 +27,7 @@ body{
 .right_nav{
     display: flex;
     justify-content: center;
-    gap: 20%;
+    gap: 15%;
     padding-top: 10px;
 }
 

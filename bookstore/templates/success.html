@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/success.css' %}">
+</head>
+<body>
+
+<div class="success-container">
+
+    <div class="checkmark">✔</div>
+
+    <h2>Order Placed Successfully!</h2>
+
+    <p>Thank you for your purchase 🎉</p>
+    <p>Your order will be delivered soon.</p>
+
+    <a href="{% url 'home' %}" class="home-btn">Continue Shopping</a>
+
+</div>
+
+</body>
+</html>

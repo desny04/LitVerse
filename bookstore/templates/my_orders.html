@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/my_orders.css' %}">
+</head>
+<body>
+    <h2>My Orders</h2>
+
+{% if orders %}
+
+    {% for order in orders %}
+
+    <div class="order-card">
+
+        <div class="order-header">
+            
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+            <p>{{ order.created_at }}</p>
+
+            <p>Status: 
+                <span class="status {{ order.status }}">
+                    {{ order.status }}
+                </span>
+            </p>
+
+            {% if order.status == 'pending' %}
+                <a href="{% url 'cancel_order' order.id %}" class="cancel-btn">
+                     Cancel Order
+                </a>
+            {% endif %}
+            
+        </div>
+
+        <div class="order-items">
+
+            {% for item in order.orderitem_set.all %}
+
+            <div class="order-item">
+
+                <img src="{{ item.book.image.url }}" width="60">
+
+                <div>
+                    <p>{{ item.book.title }}</p>
+                    <p>Qty: {{ item.quantity }}</p>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="order-total">
+            Total: ${{ order.total }}
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No orders yet</p>
+
+{% endif %}
+</body>
+</html>
