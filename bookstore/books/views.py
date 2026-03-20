@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from decimal import Decimal
 from .models import Book
 from .models import Order, OrderItem
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -232,6 +234,18 @@ def checkout(request):
         payment = request.POST.get("payment")
 
         total = 0
+
+        send_mail(
+            subject="Order Placed - LitVerse",
+            message = f"""
+                    Hi {name},
+                    Your order has been placed successfully 🎉
+                    Thank you for shopping with LitVerse 📚
+                    """,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[email],
+            fail_silently=False,
+        )
 
         # create order
         order = Order.objects.create(

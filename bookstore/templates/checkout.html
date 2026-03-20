@@ -7,9 +7,99 @@
 </head>
 <body>
 
+    <div class="nav">
+
+        <div class="left_nav">
+            <div class="litverselogo">
+                <a href="{% url 'home' %}?category=all"><img src="{% static 'images/logohorizont.png' %}" alt="" width="180px"></a>
+            </div>
+        </div>
+
+        <div class="right_nav">
+            <form method="GET" action="">
+                <div class="search_bar">
+                    <input type="text" name="q" placeholder="Search books, authors, categories...">
+                </div>
+            </form>
+
+            <div class="buttons">
+                <div class="wishlist">
+                    <a href="{% url 'wishlist' %}" class="wishlist-btn"><img src="{% static 'images/wishlistnav.png' %}" class="icon-img" alt="" width="20px">Wishlist</a>
+                </div>
+
+                <div class="cart">
+                    <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{% if cart_count > 0 %}{{ cart_count }}{% endif %}</span></a>
+                </div>
+
+                <div class="cart">
+                    <a href="{% url 'my_orders' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Orders</a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'logout' %}" class="logout-btn"><img src="{% static 'images/logoutnav.png' %}" class="icon-img" alt="" width="16px">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="chat-icon" onclick="toggleChatbox()">
+       
+        <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+        </svg>
+
+        <span class="tooltip">Chat box</span>
+    </div>
+
+   
+    <div class="chatbox-container" id="chatboxContainer">
+        <div class="chatbox">
+            <div class="chat-header">
+                <h3>🤖 Support Bot</h3>
+                <button class="close-btn" onclick="toggleChatbox()">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hi! 👋 I'm your assistant. Please select a question below:
+                </div>
+            </div>
+            
+
+            <div class="questions-section">
+                <div class="questions-title">📋 Common Questions:</div>
+                <div class="question-buttons">
+                    <button class="question-btn" onclick="askQuestion('How long does shipping take?')">
+                        Shipping Time
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('What are your prices?')">
+                         Prices
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('How can I contact support?')">
+                        Contact support
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('What is your return policy?')">
+                        Return Policy
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('Do you ship internationally?')">
+                        International Orders
+                    </button>
+                    <button class="question-btn" onclick="askQuestion('What if I receive a damaged book?')">
+                        Damaged Product
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Checkout Details</h2>
+
 <div class="checkout-container">
 
-    <h2>Checkout</h2>
+
 
     <form method="POST">
         {% csrf_token %}
@@ -31,11 +121,25 @@
 
         <div class="form-group">
             <label>Payment Method</label>
-            <select name="payment">
-                <option>Cash on Delivery</option>
-                <option>UPI</option>
-                <option>Card</option>
-            </select>
+
+            <div class="payment-options">
+
+                <label>
+                    <input type="radio" name="payment" value="cod" required>
+                    Cash on Delivery
+                </label>
+
+                <label>
+                    <input type="radio" name="payment" value="upi">
+                    UPI
+                </label>
+
+                <label>
+                    <input type="radio" name="payment" value="card">
+                    Card
+                </label>
+
+            </div>
         </div>
 
         <button type="submit" class="place-order">Place Order</button>
@@ -43,6 +147,150 @@
     </form>
 
 </div>
+
+
+<div class="footer">
+
+        <div class="litverse-qoute">
+
+            <div class="litverse-foot-logo">
+                <img src="{% static 'images/logohorizont.png' %}" alt="" width="180px">
+            </div>
+
+            <div class="qoute">
+                <p>Your trusted online destination for discovering and </p>
+                <p>purchasing the best books across all genres.</p>
+            </div>
+
+        </div>
+
+        <div class="links-contact">
+            <div class="quick-links">
+                <p>Quick Links</p>
+                <ul type="none">
+                    <a href="{% url 'home' %}?category=all"><li>Home</li></a>
+                    <a href="?category=history"><li>History</li></a>
+                    <a href="?category=selfhelp"><li>Self Help</li></a>
+                    <a href="?category=business"><li>Business</li></a>
+                </ul>
+            </div>
+
+            <div class="customer-service">
+                <p>Customer Service</p>
+                <ul type="none">
+                    <li>About Us</li>
+                    <li>Shipping Info</li>
+                    <li>Return</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <p>Contact Us</p>
+                <ul type="none">
+                    <li>📍123 Book Street, Reading City, RC 12345</li>
+                    <li>📞(555) 123-4567o</li>
+                    <li>✉ info@bookstore.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
+    <script>
+        function toggleChatbox() {
+            const chatbox = document.getElementById('chatboxContainer');
+            if (chatbox.style.display === 'none' || chatbox.style.display === '') {
+                chatbox.style.display = 'block';
+            } else {
+                chatbox.style.display = 'none';
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            
+           
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const messagesDiv = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = '<span></span><span></span><span></span>';
+            messagesDiv.appendChild(typingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function askQuestion(question) {
+    
+            addMessage(question, 'user');
+            
+          
+            showTypingIndicator();
+            
+        
+            setTimeout(() => {
+                removeTypingIndicator();
+                
+              
+                let response = '';
+                switch(question) {
+                    case 'How long does shipping take?':
+                        response = 'Delivery typically takes 3-5 business days for standard shipping within the continental US. Express shipping (1-2 business days) is available at checkout. International orders may take 7-14 business days depending on customs clearance.';
+                        break;
+                    case 'What are your prices?':
+                        response = 'We have flexible pricing plans starting from ₹300/month. Would you like me to send you the detailed pricing guide?';
+                        break;
+                    case 'How can I contact support?':
+                        response = 'You can reach our support team at support@example.com or use the live chat during business hours. We typically respond within 2 hours.';
+                        break;
+                    case 'What is your return policy?':
+                        response = 'We accept returns within 30 days of delivery. Books must be unmarked and in their original condition. Simply visit our Returns Center to print a free shipping label. Refunds are processed within 5-7 business days after we receive the item.';
+                        break;
+                    case 'Do you ship internationally?':
+                        response = '"Yes, we ship to over 50 countries! Rates: Calculated at checkout based on weight Delivery: *7-21 business days* Customs: Import duties/taxes may apply (not included in our prices) Tracking: Included with all international orders';
+                        break;
+                    case 'What if I receive a damaged book?':
+                        response = '"We are so sorry that happened! Here is what to do:Email photos of the damage within 48 hours of delivery Choose your resolution:Full refund (including return shipping)Immediate replacement at no cost 20% partial refund if you keep the book Most issues are resolved within 24 hours!"';
+                        break;
+                    default:
+                        response = 'Thanks for your question! Let me find the best answer for you.';
+                }
+                
+                addMessage(response, 'bot');
+                
+             
+                setTimeout(() => {
+                    addMessage('Is there anything else I can help you with? Just click another question above! 👆', 'bot');
+                }, 500);
+            }, 1500);
+        }
+
+        document.addEventListener('click', function(event) {
+            const chatbox = document.getElementById('chatboxContainer');
+            const chatIcon = document.querySelector('.chat-icon');
+            
+            if (!chatbox.contains(event.target) && !chatIcon.contains(event.target) && chatbox.style.display === 'block') {
+                chatbox.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>

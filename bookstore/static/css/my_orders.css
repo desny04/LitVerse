@@ -1,84 +1,932 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
-
 
 body{
-    font-family: Arial;
-    background: #f5f5f5;
+    overflow-x: hidden;
 }
 
-h2{
-    text-align: center;
-    margin: 20px;
+.nav{
+    display: flex;
+    justify-content:left;
+    position:fixed;   
+    width:100%;
+    gap: 15%;
+    padding: 5px;
+    height: 60px;
+    background-color: white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    z-index:1000;
 }
 
-.order-card{
-    width: 70%;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
+.left_nav{
+    padding-left: 15px;
+}
+
+.right_nav{
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding-top: 10px;
+}
+
+.search_bar input{
+    width: 35vw;
+    height: 40px;
+    border: 1px solid rgb(209, 209, 209);
+    outline: none;
     border-radius: 10px;
+    padding-left: 10px;
+    color: rgb(141, 141, 141);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
 }
 
-.order-header{
+.buttons{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.order-items{
-    margin-top: 10px;
-}
-
-.order-item{
-    display: flex;
+    justify-content: center;
     gap: 15px;
-    margin-bottom: 10px;
 }
 
-.order-total{
-    margin-top: 10px;
-    font-weight: bold;
+.wishlist-btn{
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 12px;
+text-decoration:none;
+color:white;
+font-weight:500;
+position:relative;
+
+border-right:1px solid rgba(255,255,255,0.2);
+}
+
+.wishlist{
+    cursor: pointer;
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size:medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,    
+        #b84cff 30%,    
+        #7b2be2 100%   
+    );
 }
 
 
-.status{
-    padding: 4px 10px;
-    border-radius: 6px;
+
+.wishlist:hover{
+    background: linear-gradient(
+        to bottom,   
+        #8c3bc3 30%,    
+        #671ec7 100%   
+    );
+}
+.cart-btn{
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 20px;
+text-decoration:none;
+color:white;
+font-weight:500;
+position:relative;
+
+border-right:1px solid rgba(255,255,255,0.2);
+}
+
+.cart{
+    cursor: pointer;
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size:medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,    
+        #b84cff 30%,    
+        #7b2be2 100%   
+    );
+}
+
+.cart-btn{
+    position: relative;
+}
+
+#cart-count{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
     color: white;
     font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Colors */
-.status.pending{
-    background: orange;
+#cart-count:empty{
+    display: none;
+}
+
+
+
+.cart:hover{
+    background: linear-gradient(
+        to bottom,   
+        #8c3bc3 30%,    
+        #671ec7 100%   
+    );
+}
+
+
+.logout-btn{
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:8px 18px;
+text-decoration:none;
+color:white;
+font-weight:500;
+position:relative;
+
+border-right:1px solid rgba(255,255,255,0.2);
+}
+
+.logout{
+    cursor: pointer;
+    width: 100px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size:medium;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,    
+        #b84cff 30%,    
+        #7b2be2 100%   
+    );
+}
+
+
+
+.logout:hover{
+    background: linear-gradient(
+        to bottom,   
+        #8c3bc3 30%,    
+        #671ec7 100%   
+    );
+}
+
+
+h2 {
+    padding-top: 100px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+
+.order-card {
+  width: 90%;
+  margin: 0 auto 1.5rem auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Header */
+.order-header {
+  padding: 1.25rem 1.5rem;
+  background: #fafbfc;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.order-header p {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.order-header p strong {
+  color: #1a2c3e;
+  font-weight: 600;
+}
+
+.order-header p:first-child {
+  font-weight: 500;
+}
+
+.order-header p:first-child strong {
+  color: #b84cff;
+}
+
+
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #d97706;
 }
 
 .status.processing{
-    background: blue;
+    background: #fef3c7;
+    color: #d97706;
 }
 
-.status.shipped{
-    background: purple;
+.status.shipped {
+  background: #dbeafe;
+  color: #2563eb;
 }
 
-.status.delivered{
-    background: green;
+.status.delivered {
+  background: #d1fae5;
+  color: #059669;
 }
 
-.status.cancelled{
-    background: red;
+.status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 
-.cancel-btn{
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    background: red;
+.cancel-btn {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: #fff0f0;
+  color: #dc2626;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid #fecaca;
+  margin-left: auto;
+}
+
+.cancel-btn:hover {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  transform: scale(1.02);
+}
+
+
+.order-items {
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f2f4;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-item img {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
+}
+
+.order-item div {
+  flex: 1;
+}
+
+.order-item div p:first-child {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.375rem;
+  font-size: 16;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.order-item div p:last-child {
+  font-size: 12;
+  color: #64748b;
+  margin: 0;
+}
+
+.order-item div p:last-child::before {
+  content: "📦 ";
+  font-size: 0.8rem;
+}
+
+.order-total {
+  padding: 1rem 1.5rem;
+  background: #fafbfc;
+  border-top: 1px solid #e9ecef;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1e293b;
+}
+
+.order-total::before {
+  font-weight: 500;
+  color: #5a6e7c;
+}
+
+
+.no-orders {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 24px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #5a6e7c;
+  font-size: 1rem;
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+
+.empty-cart-img{
+    padding-top: 140px;
+    text-align: center;
+}
+
+.empty{
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.add-books{
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.browse-books{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.browse-books button{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size:14px;
+    font-weight: 450;
+    background: linear-gradient(
+        to bottom,    
+        #b84cff 30%,    
+        #7b2be2 100%   
+    );
+}
+
+.browse-books button:hover{
+    background: linear-gradient(
+        to bottom,   
+        #8c3bc3 30%,    
+        #671ec7 100%   
+    );
+}
+
+
+
+
+
+.chat-icon{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #8c3bc3 ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.tooltip {
+    text-align: center;
+    width: 50px;
+    height: 15px;
+    position: absolute;
+    bottom: 110%; 
+    left: 0%;
+    transform: translateX(-50%);
+    
+    background-color: #a978ca;
     color: white;
+    padding: 5px 10px;
     border-radius: 5px;
+    
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.chat-icon:hover .tooltip {
+    opacity: 1;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+}
+
+.chat-icon img, .chat-icon svg {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+}
+
+.chatbox-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    display: none;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+      
+.chatbox {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+        .chat-header {
+            background: #8c3bc3 ;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #f0f2f5;
+        }
+
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            max-width: 80%;
+            word-wrap: break-word;
+            font-size: 14px;
+        }
+
+        .bot-message {
+            background: white;
+            margin-right: auto;
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-message {
+            background: #d2adec;
+            margin-left: auto;
+            border-bottom-right-radius: 2px;
+        }
+
+   
+        .questions-section {
+            padding: 12px;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+
+        .questions-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .question-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .question-btn {
+            background: #f0f2f5;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 13px;
+            cursor: pointer;
+            color: #8c3bc3 ;
+            transition: background 0.3s;
+            text-align: left;
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+
+        .question-btn:hover {
+            background: #e0e2e5;
+        }
+
+        .typing {
+            padding: 10px 12px;
+            background: white;
+            border-radius: 7px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .typing span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+@media (max-width: 768px) {
+    .chat-icon {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .chat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .chatbox-container {
+        bottom: 90px;
+        right: 20px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-icon {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .chat-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .chatbox-container {
+        bottom: 75px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .chat-header h3 {
+        font-size: 15px;
+    }
+
+    .chat-messages {
+        height: 280px;
+        padding: 12px;
+    }
+
+    .message {
+        font-size: 13px;
+        padding: 8px 12px;
+        max-width: 85%;
+    }
+
+    .questions-section {
+        padding: 10px;
+    }
+
+    .questions-title {
+        font-size: 12px;
+    }
+
+    .question-btn {
+        min-width: calc(50% - 4px);
+        font-size: 12px;
+        padding: 8px 10px;
+        flex: 1 1 calc(50% - 4px);
+    }
+
+    .close-btn {
+        font-size: 22px;
+        padding: 0 5px;
+    }
+
+    .typing {
+        padding: 8px 12px;
+    }
+
+    .typing span {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .chatbox-container {
+        bottom: 70px;
+    }
+
+    .chat-messages {
+        height: 250px;
+    }
+
+    .question-btn {
+        min-width: 100%;
+        font-size: 11px;
+    }
+
+    .message {
+        max-width: 90%;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .chatbox-container {
+        bottom: 80px;
+        max-height: 80vh;
+    }
+
+    .chat-messages {
+        height: 150px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .chatbox-container {
+        width: 330px;
+    }
+
+    .chat-messages {
+        height: 290px;
+    }
+
+    .question-btn {
+        min-width: 140px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    background-color: rgb(248, 248, 248);
+    display: flex;
+    justify-content: center;
+    gap: 220px;
+    padding-top:0px;
+    padding-left: 20px;
+    height: 200px;
+}
+
+.litverse-qoute{
+    padding-top: 30px;
+}
+
+.qoute{
+    padding-top: 20px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.links-contact{
+    display: flex;
+    gap: 200px;
+}
+
+.quick-links p{
+    padding-top: 20px;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quick-links ul{
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 13px;
+}
+
+.quick-links a{
     text-decoration: none;
+    color: inherit;
+}
+
+.quick-links li{
+    padding-top: 8px;
+}
+
+.quick-links li:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.customer-service p{
+    padding-top: 20px;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.customer-service ul{
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 13px;
+}
+
+.customer-service li{
+    padding-top: 8px;
+}
+
+.customer-service li:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.contact{
+    padding-right: 20px;
+}
+
+.contact p{
+    padding-top: 20px;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact ul{
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 13px;
+}
+
+.contact li:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.contact li{
+    padding-top: 8px;
+}
+.copyright{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

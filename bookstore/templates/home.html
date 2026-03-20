@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
@@ -32,13 +32,14 @@
                     <a href="{% url 'cart' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Cart<span id="cart-count">{% if cart_count > 0 %}{{ cart_count }}{% endif %}</span></a>
                 </div>
 
+                <div class="cart">
+                    <a href="{% url 'my_orders' %}" class="cart-btn"><img src="{% static 'images/cartnav.png' %}" class="icon-img" alt="" width="21px">Orders</a>
+                </div>
+
                 <div class="logout">
                     <a href="{% url 'logout' %}" class="logout-btn"><img src="{% static 'images/logoutnav.png' %}" class="icon-img" alt="" width="16px">Logout</a>
                 </div>
 
-                <div class="logout">
-                    <a href="{% url 'my_orders' %}" class="logout-btn"><img src="{% static 'images/logoutnav.png' %}" class="icon-img" alt="" width="16px">Orders</a>
-                </div>
             </div>
 
         </div>
