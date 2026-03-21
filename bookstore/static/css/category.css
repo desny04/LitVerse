@@ -833,4 +833,568 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 8%;
+    }
+    
+    .search_bar input {
+        width: 32vw;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        row-gap: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .footer {
+        gap: 80px;
+    }
+    
+    .links-contact {
+        gap: 80px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 60px;
+        gap: 8px;
+        padding: 10px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .left_nav {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .litverselogo img {
+        width: 150px;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-top: 5px;
+        align-items: center;
+    }
+    
+    .search_bar input {
+        width: 85vw;
+        max-width: 450px;
+        height: 38px;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 95px;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .main_section {
+        padding-top: 130px;
+        height: auto;
+        min-height: 180px;
+        padding-bottom: 25px;
+        margin-top: 0;
+    }
+    
+    .backto {
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+    
+    .backto a {
+        padding-left: 25px;
+        font-size: 14px;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .backto a:hover {
+        text-decoration: underline;
+    }
+    
+    .hero-cat-title {
+        padding-left: 25px;
+        font-size: 26px;
+        padding-top: 8px;
+    }
+    
+    .book-avail {
+        padding-left: 25px;
+        font-size: 15px;
+        padding-top: 8px;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 25px;
+        gap: 25px;
+        row-gap: 40px;
+        justify-items: center;
+    }
+    
+    .book-card {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        min-height: 460px;
+    }
+    
+    .book-img img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    
+    .title {
+        font-size: 15px;
+        padding-top: 4px;
+    }
+    
+    .author {
+        font-size: 13px;
+    }
+    
+    .price-addcart {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .price {
+        padding-top: 20px;
+        font-size: 17px;
+    }
+    
+    .add-cart {
+        padding-top: 15px;
+        padding-right: 12px;
+        width: auto;
+    }
+    
+    .add-cart button {
+        width: 90px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    
+    .litverse-qoute {
+        padding-top: 0;
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 35px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        padding-top: 0;
+        font-size: 16px;
+    }
+    
+    .quick-links ul,
+    .customer-service ul,
+    .contact ul {
+        padding-top: 10px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+    
+    .contact li {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .copyright {
+        padding: 25px 20px 35px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .nav {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .litverselogo img {
+        width: 130px;
+    }
+    
+    .right_nav {
+        gap: 10px;
+    }
+    
+    .search_bar input {
+        width: 92vw;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 85px;
+        height: 34px;
+        font-size: 12px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 8px;
+    }
+    
+    .icon-img {
+        width: 14px;
+    }
+    
+    .main_section {
+        padding-top: 140px;
+        padding-bottom: 20px;
+    }
+    
+    .backto {
+        padding-top: 12px;
+        padding-bottom: 3px;
+    }
+    
+    .backto a {
+        padding-left: 18px;
+        font-size: 13px;
+        display: inline-block;
+    }
+    
+    .hero-cat-title {
+        padding-left: 18px;
+        font-size: 22px;
+    }
+    
+    .book-avail {
+        padding-left: 18px;
+        font-size: 13px;
+    }
+    
+    .book-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 18px;
+        gap: 30px;
+        justify-items: center;
+    }
+    
+    .book-card {
+        max-width: 280px;
+        min-height: 440px;
+    }
+    
+    .book-img img {
+        max-height: 280px;
+    }
+    
+    .category-prodwish {
+        gap: 20px;
+    }
+    
+    .category {
+        font-size: 12px;
+    }
+    
+    .wishlist-icon {
+        font-size: 16px;
+    }
+    
+    .title {
+        font-size: 15px;
+    }
+    
+    .author {
+        font-size: 12px;
+    }
+    
+    .price-addcart {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .price {
+        padding-top: 15px;
+        font-size: 18px;
+    }
+    
+    .add-cart {
+        padding-top: 5px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        width: 100%;
+    }
+    
+    .add-cart button {
+        width: 100%;
+        height: 34px;
+        font-size: 13px;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+        gap: 35px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        gap: 30px;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        font-size: 15px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        padding: 20px 15px 30px;
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .main_section {
+        padding-top: 150px;
+    }
+    
+    .backto a {
+        padding-left: 15px;
+        font-size: 12px;
+    }
+    
+    .hero-cat-title {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    
+    .book-avail {
+        padding-left: 15px;
+        font-size: 12px;
+    }
+    
+    .book-card {
+        max-width: 260px;
+        min-height: 420px;
+    }
+    
+    .book-img img {
+        max-height: 260px;
+    }
+    
+    .title {
+        font-size: 14px;
+    }
+    
+    .price p {
+        font-size: 16px;
+    }
+    
+    .add-cart button {
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    .chat-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .chatbox-container {
+        width: 85%;
+        max-width: 380px;
+        bottom: 80px;
+        right: 20px;
+    }
+    
+    .chat-header h3 {
+        font-size: 16px;
+    }
+    
+    .chat-messages {
+        max-height: 280px;
+    }
+    
+    .message {
+        font-size: 13px;
+    }
+    
+    .questions-title {
+        font-size: 13px;
+    }
+    
+    .question-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chat-icon {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chat-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .chatbox-container {
+        width: 92%;
+        max-width: 340px;
+        bottom: 70px;
+        right: 12px;
+    }
+    
+    .chat-header {
+        padding: 12px 15px;
+    }
+    
+    .chat-header h3 {
+        font-size: 15px;
+    }
+    
+    .close-btn {
+        font-size: 22px;
+    }
+    
+    .chat-messages {
+        max-height: 260px;
+        padding: 12px;
+    }
+    
+    .message {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .questions-section {
+        padding: 12px;
+    }
+    
+    .questions-title {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .question-buttons {
+        gap: 6px;
+    }
+    
+    .question-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+
+.backto a {
+    transition: opacity 0.3s ease;
+}
+
+.backto a:active {
+    opacity: 0.8;
+}
 

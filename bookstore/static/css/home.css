@@ -1312,7 +1312,6 @@ border-right:1px solid rgba(255,255,255,0.2);
 
 
 
-        /* Responsive Design Only - No Color Changes */
 @media (max-width: 768px) {
     .chat-icon {
         bottom: 20px;
