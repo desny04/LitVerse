@@ -49,3 +49,120 @@ body{
         #671ec7 100%   
     );
 }
+
+
+
+/* Responsive CSS - Add at the end of your success.css file */
+
+/* Tablet Devices */
+@media screen and (max-width: 1024px) {
+    .success-container {
+        padding: 100px 50px;
+    }
+    
+    .checkmark {
+        font-size: 55px;
+        padding-bottom: 25px;
+    }
+    
+    h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .home-btn {
+        padding: 10px 25px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .success-container {
+        padding: 80px 30px;
+    }
+    
+    .checkmark {
+        font-size: 50px;
+        padding-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    
+    p {
+        font-size: 15px;
+    }
+    
+    .home-btn {
+        padding: 10px 22px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .success-container {
+        padding: 60px 20px;
+    }
+    
+    .checkmark {
+        font-size: 45px;
+        padding-bottom: 15px;
+    }
+    
+    h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+    .home-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-top: 18px;
+    }
+}
+
+/* Very Small Mobile Devices */
+@media screen and (max-width: 360px) {
+    .success-container {
+        padding: 50px 15px;
+    }
+    
+    .checkmark {
+        padding-top: 200px;
+        font-size: 40px;
+        padding-bottom: 12px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    p {
+        font-size: 13px;
+    }
+    
+    .home-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+        margin-top: 15px;
+    }
+}

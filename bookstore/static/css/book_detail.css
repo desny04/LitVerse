@@ -817,3 +817,521 @@ border-right:1px solid rgba(255,255,255,0.2);
         min-width: 140px;
     }
 }
+
+
+
+/* Responsive CSS - Add at the end of your book_detail.css file */
+
+/* Tablet Devices */
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 10%;
+    }
+    
+    .search_bar input {
+        width: 30vw;
+    }
+    
+    .image-detail {
+        gap: 10%;
+        padding: 0 20px;
+    }
+    
+    .book-image img {
+        width: 280px;
+        height: auto;
+    }
+    
+    .title {
+        font-size: 40px;
+    }
+    
+    .author {
+        font-size: 20px;
+    }
+    
+    .price {
+        font-size: 28px;
+    }
+    
+    .add-cart button {
+        width: 400px;
+    }
+    
+    .footer {
+        gap: 100px;
+    }
+    
+    .links-contact {
+        gap: 100px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 60px;
+        gap: 8px;
+        padding: 10px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .litverselogo img {
+        width: 150px;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-top: 5px;
+        align-items: center;
+    }
+    
+    .search_bar input {
+        width: 80vw;
+        max-width: 400px;
+        height: 38px;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 95px;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .backto {
+        padding-top: 120px;
+    }
+    
+    .backto a {
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    
+    .image-detail {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .book-image {
+        padding-left: 0;
+        padding-top: 0;
+        text-align: center;
+    }
+    
+    .book-image img {
+        width: 280px;
+        height: auto;
+    }
+    
+    .all-detail {
+        padding-right: 0;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .category {
+        width: auto;
+        display: inline-block;
+        padding: 4px 15px;
+    }
+    
+    .title {
+        font-size: 32px;
+        padding-top: 15px;
+    }
+    
+    .author {
+        font-size: 18px;
+    }
+    
+    .price {
+        font-size: 26px;
+        padding-top: 15px;
+    }
+    
+    .about {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+    
+    .descr {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    
+    .book-info-box {
+        max-width: 100%;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .info-item .label {
+        font-size: 12px;
+    }
+    
+    .info-item .value {
+        font-size: 14px;
+    }
+    
+    .add-cart button {
+        width: 100%;
+        max-width: 400px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    
+    .litverse-qoute {
+        padding-top: 0;
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 35px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        padding-top: 0;
+        font-size: 16px;
+    }
+    
+    .quick-links ul,
+    .customer-service ul,
+    .contact ul {
+        padding-top: 10px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+    
+    .contact li {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .copyright {
+        padding: 25px 20px 35px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .nav {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .litverselogo img {
+        width: 130px;
+    }
+    
+    .right_nav {
+        gap: 10px;
+    }
+    
+    .search_bar input {
+        width: 92vw;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 85px;
+        height: 34px;
+        font-size: 12px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 8px;
+    }
+    
+    .icon-img {
+        width: 14px;
+    }
+    
+    .backto {
+        padding-top: 130px;
+    }
+    
+    .backto a {
+        padding-left: 15px;
+        font-size: 13px;
+    }
+    
+    .image-detail {
+        padding: 0 15px;
+        gap: 20px;
+    }
+    
+    .book-image img {
+        width: 220px;
+    }
+    
+    .category {
+        font-size: 12px;
+        padding: 3px 12px;
+    }
+    
+    .title {
+        font-size: 24px;
+        padding-top: 10px;
+    }
+    
+    .author {
+        font-size: 16px;
+    }
+    
+    .price {
+        font-size: 22px;
+        padding-top: 10px;
+    }
+    
+    .about {
+        font-size: 16px;
+        padding-top: 12px;
+    }
+    
+    .descr {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .book-info-box {
+        gap: 12px;
+        padding: 12px;
+    }
+    
+    .info-item .label {
+        font-size: 11px;
+    }
+    
+    .info-item .value {
+        font-size: 13px;
+    }
+    
+    .add-cart {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .add-cart button {
+        height: 42px;
+        font-size: 13px;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+        gap: 35px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        gap: 30px;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        font-size: 15px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        padding: 20px 15px 30px;
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .backto {
+        padding-top: 220px;
+    }
+    
+    .book-image{
+        padding-top: 20px;
+    }
+    
+    .title {
+        font-size: 20px;
+    }
+    
+    .author {
+        font-size: 14px;
+    }
+    
+    .price {
+        font-size: 20px;
+    }
+    
+    .about {
+        font-size: 15px;
+    }
+    
+    .descr {
+        font-size: 12px;
+    }
+    
+    .book-info-box {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .add-cart button {
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .chatbox-container {
+        width: 85%;
+        max-width: 380px;
+        bottom: 80px;
+        right: 20px;
+    }
+    
+    .chat-messages {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chat-icon {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chat-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .chatbox-container {
+        width: 92%;
+        max-width: 340px;
+        bottom: 70px;
+        right: 10px;
+        left: auto;
+    }
+    
+    .chat-header h3 {
+        font-size: 14px;
+    }
+    
+    .chat-messages {
+        height: 260px;
+    }
+    
+    .message {
+        font-size: 12px;
+        max-width: 85%;
+    }
+    
+    .questions-title {
+        font-size: 11px;
+    }
+    
+    .question-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+        min-width: calc(50% - 4px);
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}

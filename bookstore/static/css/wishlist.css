@@ -820,3 +820,504 @@ border-right:1px solid rgba(255,255,255,0.2);
         min-width: 140px;
     }
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 10%;
+    }
+    
+    .search_bar input {
+        width: 30vw;
+    }
+    
+    .cart-container {
+        padding: 40px 50px;
+    }
+    
+    .footer {
+        gap: 100px;
+    }
+    
+    .links-contact {
+        gap: 100px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 60px;
+        gap: 8px;
+        padding: 10px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .litverselogo img {
+        width: 150px;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-top: 5px;
+        align-items: center;
+    }
+    
+    .search_bar input {
+        width: 80vw;
+        max-width: 400px;
+        height: 38px;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 95px;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .cart-container {
+        padding: 30px 25px;
+    }
+    
+    .cart-title p {
+        padding-top: 100px;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .cart-details {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .cart-details h3 {
+        font-size: 15px;
+    }
+    
+    .cart-details p {
+        font-size: 13px;
+    }
+    
+    .price {
+        padding-right: 0;
+        font-size: 16px;
+    }
+    
+    .wishlist-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    
+    .delete-btn {
+        font-size: 22px;
+    }
+    
+    .move-cart-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .empty-cart-img {
+        padding-top: 100px;
+    }
+    
+    .empty-cart-img img {
+        width: 60px;
+    }
+    
+    .empty {
+        font-size: 24px;
+        padding-top: 15px;
+    }
+    
+    .add-books {
+        font-size: 16px;
+        padding-top: 8px;
+    }
+    
+    .browse-books {
+        padding-top: 25px;
+        padding-bottom: 60px;
+    }
+    
+    .browse-books button {
+        width: 140px;
+        height: 38px;
+        font-size: 13px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    
+    .litverse-qoute {
+        padding-top: 0;
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 35px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        padding-top: 0;
+        font-size: 16px;
+    }
+    
+    .quick-links ul,
+    .customer-service ul,
+    .contact ul {
+        padding-top: 10px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+    
+    .contact li {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .copyright {
+        padding: 25px 20px 35px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .litverselogo img {
+        width: 130px;
+    }
+    
+    .right_nav {
+        gap: 10px;
+    }
+    
+    .search_bar input {
+        width: 92vw;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 85px;
+        height: 34px;
+        font-size: 12px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 8px;
+    }
+    
+    .icon-img {
+        width: 14px;
+    }
+    
+    .cart-container {
+        padding: 20px 15px;
+    }
+    
+    .cart-title p {
+        padding-top: 110px;
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .cart-item {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .cart-item img {
+        width: 70px;
+        height: auto;
+    }
+    
+    .cart-details h3 {
+        font-size: 14px;
+    }
+    
+    .cart-details p {
+        font-size: 12px;
+    }
+    
+    .price {
+        font-size: 15px;
+    }
+    
+    .wishlist-actions {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .delete-btn {
+        font-size: 20px;
+    }
+    
+    .move-cart-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .empty-cart-img {
+        padding-top: 110px;
+    }
+    
+    .empty-cart-img img {
+        width: 50px;
+    }
+    
+    .empty {
+        font-size: 20px;
+        padding-top: 12px;
+    }
+    
+    .add-books {
+        font-size: 14px;
+        padding: 8px 15px 0;
+    }
+    
+    .browse-books {
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+    
+    .browse-books button {
+        width: 130px;
+        height: 36px;
+        font-size: 12px;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+        gap: 35px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        gap: 30px;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        font-size: 15px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        padding: 20px 15px 30px;
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .cart-title p {
+        padding-top: 200px;
+        font-size: 18px;
+    }
+    
+    .cart-item {
+        padding: 12px;
+    }
+    
+    .cart-item img {
+        width: 60px;
+    }
+    
+    .cart-details h3 {
+        font-size: 13px;
+    }
+    
+    .cart-details p {
+        font-size: 11px;
+    }
+    
+    .price {
+        font-size: 14px;
+    }
+    
+    .move-cart-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    .empty-cart-img{
+        padding-top: 200px;
+    }
+    
+    .empty {
+        font-size: 18px;
+    }
+    
+    .add-books {
+        font-size: 13px;
+    }
+    
+    .browse-books button {
+        width: 120px;
+        height: 34px;
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .chatbox-container {
+        width: 85%;
+        max-width: 380px;
+        bottom: 80px;
+        right: 20px;
+    }
+    
+    .chat-messages {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chat-icon {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chat-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .chatbox-container {
+        width: 92%;
+        max-width: 340px;
+        bottom: 70px;
+        right: 10px;
+        left: auto;
+    }
+    
+    .chat-header h3 {
+        font-size: 14px;
+    }
+    
+    .chat-messages {
+        height: 260px;
+    }
+    
+    .message {
+        font-size: 12px;
+        max-width: 85%;
+    }
+    
+    .questions-title {
+        font-size: 11px;
+    }
+    
+    .question-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+        min-width: calc(50% - 4px);
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}

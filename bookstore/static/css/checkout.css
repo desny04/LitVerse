@@ -775,3 +775,266 @@ h2 {
 
 
 
+/* Responsive CSS for Nav and Footer - Add at the end of your checkout.css file */
+
+/* Tablet Devices */
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 10%;
+    }
+    
+    .search_bar input {
+        width: 30vw;
+    }
+    
+    .footer {
+        gap: 100px;
+    }
+    
+    .links-contact {
+        gap: 100px;
+    }
+}
+
+/* Small Tablets & Large Phones */
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        min-height: 60px;
+        gap: 8px;
+        padding: 10px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .litverselogo img {
+        width: 150px;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-top: 5px;
+        align-items: center;
+    }
+    
+    .search_bar input {
+        width: 80vw;
+        max-width: 400px;
+        height: 38px;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 95px;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    
+    .litverse-qoute {
+        padding-top: 0;
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 35px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        padding-top: 0;
+        font-size: 16px;
+    }
+    
+    .quick-links ul,
+    .customer-service ul,
+    .contact ul {
+        padding-top: 10px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+    
+    .contact li {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .copyright {
+        padding: 25px 20px 35px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 480px) {
+    .nav {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .litverselogo img {
+        width: 130px;
+    }
+    
+    .right_nav {
+        gap: 10px;
+    }
+    
+    .search_bar input {
+        width: 92vw;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 85px;
+        height: 34px;
+        font-size: 12px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 8px;
+    }
+    
+    .icon-img {
+        width: 14px;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+        gap: 35px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        gap: 30px;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        font-size: 15px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        padding: 20px 15px 30px;
+        font-size: 11px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 360px) {
+    .litverselogo img {
+        width: 120px;
+    }
+    
+    h2{
+        padding-top: 200px;
+    }
+
+    .wishlist, .cart, .logout {
+        width: 80px;
+        height: 32px;
+        font-size: 11px;
+    }
+    
+    .footer {
+        padding: 25px 15px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 130px;
+    }
+    
+    .qoute p {
+        font-size: 11px;
+    }
+    
+    .quick-links p,
+    .customer-service p,
+    .contact p {
+        font-size: 14px;
+    }
+    
+    .quick-links li,
+    .customer-service li,
+    .contact li {
+        font-size: 11px;
+    }
+}
+
+/* Additional Fixes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
