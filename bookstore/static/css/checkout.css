@@ -636,3 +636,472 @@ h2 {
                 transform: translateY(-10px);
             }
         }
+
+    
+
+@media (max-width: 768px) {
+    .chat-icon {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .chat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .chatbox-container {
+        bottom: 90px;
+        right: 20px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-icon {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .chat-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .chatbox-container {
+        bottom: 75px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .chat-header h3 {
+        font-size: 15px;
+    }
+
+    .chat-messages {
+        height: 280px;
+        padding: 12px;
+    }
+
+    .message {
+        font-size: 13px;
+        padding: 8px 12px;
+        max-width: 85%;
+    }
+
+    .questions-section {
+        padding: 10px;
+    }
+
+    .questions-title {
+        font-size: 12px;
+    }
+
+    .question-btn {
+        min-width: calc(50% - 4px);
+        font-size: 12px;
+        padding: 8px 10px;
+        flex: 1 1 calc(50% - 4px);
+    }
+
+    .close-btn {
+        font-size: 22px;
+        padding: 0 5px;
+    }
+
+    .typing {
+        padding: 8px 12px;
+    }
+
+    .typing span {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .chatbox-container {
+        bottom: 70px;
+    }
+
+    .chat-messages {
+        height: 250px;
+    }
+
+    .question-btn {
+        min-width: 100%;
+        font-size: 11px;
+    }
+
+    .message {
+        max-width: 90%;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .chatbox-container {
+        bottom: 80px;
+        max-height: 80vh;
+    }
+
+    .chat-messages {
+        height: 150px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .chatbox-container {
+        width: 330px;
+    }
+
+    .chat-messages {
+        height: 290px;
+    }
+
+    .question-btn {
+        min-width: 140px;
+    }
+}
+
+
+
+/* ===== RESPONSIVE MEDIA QUERIES FOR CHECKOUT PAGE ===== */
+
+/* Tablet Devices (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 10%;
+    }
+    
+    .right_nav {
+        gap: 10%;
+    }
+    
+    .search_bar input {
+        width: 30vw;
+    }
+    
+    .checkout-container {
+        max-width: 500px;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+    
+    .footer {
+        gap: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .links-contact {
+        gap: 100px;
+    }
+}
+
+/* Mobile Landscape (576px - 768px) */
+@media screen and (max-width: 768px) {
+    .nav {
+        gap: 5%;
+        padding: 5px 10px;
+    }
+    
+    .left_nav img {
+        width: 140px;
+    }
+    
+    .right_nav {
+        gap: 8%;
+    }
+    
+    .search_bar input {
+        width: 35vw;
+        min-width: 150px;
+        font-size: small;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 80px;
+        font-size: small;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+    
+    h2 {
+        padding-top: 80px;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .checkout-container {
+        max-width: 90%;
+        margin: 1rem auto;
+        padding: 1.2rem;
+    }
+    
+    .form-group {
+        margin-bottom: 0.9rem;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.55rem;
+        font-size: 13px;
+    }
+    
+    .payment-options {
+        gap: 0.8rem;
+    }
+    
+    .payment-options label {
+        font-size: 13px;
+    }
+    
+    .place-order {
+        padding: 0.55rem;
+        font-size: 13px;
+        margin-top: 0.6rem;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+        padding: 30px 20px;
+    }
+    
+    .litverse-qoute {
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .quick-links, .customer-service, .contact {
+        text-align: center;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+}
+
+/* Mobile Portrait (320px - 576px) */
+@media screen and (max-width: 576px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .search_bar {
+        width: 100%;
+    }
+    
+    .search_bar input {
+        width: 90%;
+        min-width: 0;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: auto;
+        min-width: 70px;
+        height: 35px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .wishlist-btn img, .cart-btn img, .logout-btn img {
+        width: 14px;
+    }
+    
+    h2 {
+        padding-top: 20px;
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .checkout-container {
+        max-width: 95%;
+        margin: 0.8rem auto;
+        padding: 1rem;
+        border-radius: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 0.25rem;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.5rem;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .form-group textarea {
+        min-height: 60px;
+    }
+    
+    .payment-options {
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+    
+    .payment-options label {
+        font-size: 12px;
+        gap: 0.25rem;
+    }
+    
+    .payment-options input[type="radio"] {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .place-order {
+        padding: 0.5rem;
+        font-size: 12px;
+        border-radius: 6px;
+        margin-top: 0.5rem;
+    }
+    
+    .footer {
+        padding: 20px 15px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 11px;
+    }
+    
+    .quick-links p, .customer-service p, .contact p {
+        font-size: 16px;
+    }
+    
+    .quick-links ul, .customer-service ul, .contact ul {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+        padding: 20px 15px;
+    }
+}
+
+/* Small Mobile (320px and below) */
+@media screen and (max-width: 380px) {
+    .checkout-container {
+        padding: 0.8rem;
+    }
+    
+    .form-group label {
+        font-size: 12px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.45rem;
+        font-size: 11px;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+    
+    .payment-options label {
+        font-size: 11px;
+    }
+    
+    .place-order {
+        padding: 0.45rem;
+        font-size: 11px;
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media screen and (min-width: 1200px) {
+    .checkout-container {
+        max-width: 500px;
+    }
+    
+    .footer {
+        gap: 220px;
+    }
+    
+    .links-contact {
+        gap: 200px;
+    }
+}
+
+/* Fix for very tall screens */
+@media screen and (min-height: 800px) {
+    .checkout-container {
+        margin-bottom: 2rem;
+    }
+    
+    .footer {
+        margin-top: 1rem;
+    }
+}

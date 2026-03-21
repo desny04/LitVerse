@@ -67,3 +67,5 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
     quantity = models.IntegerField()
+
+

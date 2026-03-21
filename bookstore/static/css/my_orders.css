@@ -919,3 +919,205 @@ h2 {
     color: rgb(75, 75, 75);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        gap: 10%;
+    }
+    
+    .right_nav {
+        gap: 10%;
+    }
+    
+    .search_bar input {
+        width: 30vw;
+    }
+    
+    .order-card {
+        width: 95%;
+    }
+    
+    .order-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .cancel-btn {
+        margin-left: 0;
+    }
+    
+    .footer {
+        gap: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .links-contact {
+        gap: 100px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav {
+        gap: 5%;
+        padding: 5px 10px;
+    }
+    
+    .left_nav img {
+        width: 140px;
+    }
+    
+    .right_nav {
+        gap: 8%;
+    }
+    
+    .search_bar input {
+        width: 35vw;
+        min-width: 150px;
+        font-size: small;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: 80px;
+        font-size: small;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+    
+    
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+        padding: 30px 20px;
+    }
+    
+    .litverse-qoute {
+        text-align: center;
+    }
+    
+    .qoute p {
+        font-size: 12px;
+    }
+    
+    .links-contact {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .quick-links, .customer-service, .contact {
+        text-align: center;
+    }
+    
+    .contact {
+        padding-right: 0;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+    }
+    
+    .left_nav {
+        padding-left: 0;
+    }
+    
+    .right_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .search_bar {
+        width: 100%;
+    }
+    
+    .search_bar input {
+        width: 90%;
+        min-width: 0;
+        font-size: 14px;
+    }
+    
+    .buttons {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .wishlist, .cart, .logout {
+        width: auto;
+        min-width: 70px;
+        height: 35px;
+    }
+    
+    .wishlist-btn, .cart-btn, .logout-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .wishlist-btn img, .cart-btn img, .logout-btn img {
+        width: 14px;
+    }
+    
+    
+    .footer {
+        padding: 20px 15px;
+    }
+    
+    .litverse-foot-logo img {
+        width: 140px;
+    }
+    
+    .qoute p {
+        font-size: 11px;
+    }
+    
+    .quick-links p, .customer-service p, .contact p {
+        font-size: 16px;
+    }
+    
+    .quick-links ul, .customer-service ul, .contact ul {
+        font-size: 12px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+        padding: 20px 15px;
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .order-card {
+        width: 80%;
+        max-width: 1200px;
+    }
+    
+    .footer {
+        gap: 220px;
+    }
+    
+    .links-contact {
+        gap: 200px;
+    }
+}
