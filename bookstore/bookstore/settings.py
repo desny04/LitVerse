@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 
                 'books.context_processors.cart_count',
+                'books.context_processors.global_counts',
             ],
         },
     },

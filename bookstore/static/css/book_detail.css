@@ -1325,10 +1325,10 @@ border-right:1px solid rgba(255,255,255,0.2);
 }
 
 
-img {
+/* img {
     max-width: 100%;
     height: auto;
-}
+} */
 
 #cart-count {
     position: absolute;

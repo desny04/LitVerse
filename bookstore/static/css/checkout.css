@@ -1028,10 +1028,6 @@ h2 {
 }
 
 /* Additional Fixes */
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 #cart-count {
     position: absolute;
