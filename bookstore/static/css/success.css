@@ -140,7 +140,7 @@ body{
     }
 }
 
-/* Very Small Mobile Devices */
+
 @media screen and (max-width: 360px) {
     .success-container {
         padding: 50px 15px;

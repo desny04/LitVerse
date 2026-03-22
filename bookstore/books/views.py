@@ -6,8 +6,9 @@ from .models import Book
 from .models import Order, OrderItem
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def home(request):
     category = request.GET.get('category')
 
@@ -22,6 +23,7 @@ def home(request):
 
     return render(request, 'home.html', context)
 
+@login_required
 def home(request):
 
     query = request.GET.get('q')
@@ -50,6 +52,7 @@ def home(request):
 
 
 
+@login_required
 def category_books(request, category_name):
 
     books = Book.objects.filter(category=category_name)
@@ -62,6 +65,7 @@ def category_books(request, category_name):
     return render(request, "category.html", context)
 
 
+@login_required
 def book_detail(request, id):
 
     book = get_object_or_404(Book, id=id)
@@ -72,6 +76,7 @@ def book_detail(request, id):
 
     return render(request, 'book_detail.html', context)
 
+@login_required
 def cart(request):
 
     cart = request.session.get("cart", {})
@@ -95,6 +100,7 @@ def cart(request):
 
 
 
+@login_required
 def add_to_cart(request, id):
 
     cart = request.session.get('cart', {})
@@ -111,6 +117,7 @@ def add_to_cart(request, id):
 
     return JsonResponse({'cart_count': cart_count})
 
+@login_required
 def cart(request):
 
     cart = request.session.get("cart", {})
@@ -146,6 +153,7 @@ def cart(request):
     return render(request, "cart.html", context)
 
 
+@login_required
 def remove_from_cart(request, id):
 
     cart = request.session.get('cart', {})
@@ -159,6 +167,7 @@ def remove_from_cart(request, id):
 
 
 
+@login_required
 def update_cart(request, id, action):
 
     cart = request.session.get('cart', {})
@@ -180,6 +189,7 @@ def update_cart(request, id, action):
     return redirect("cart")
 
 
+@login_required
 def toggle_wishlist(request, id):
 
     wishlist = request.session.get('wishlist', [])
@@ -197,6 +207,7 @@ def toggle_wishlist(request, id):
     return JsonResponse({'in_wishlist': in_wishlist})
 
 
+@login_required
 def wishlist(request):
 
     wishlist = request.session.get('wishlist', [])
@@ -205,6 +216,7 @@ def wishlist(request):
 
     return render(request, 'wishlist.html', {'books': books})
 
+@login_required
 def remove_from_wishlist(request, id):
 
     wishlist = request.session.get('wishlist', [])
@@ -222,6 +234,7 @@ def remove_from_wishlist(request, id):
 
 
 
+@login_required
 def checkout(request):
 
     cart = request.session.get('cart', {})
@@ -280,10 +293,12 @@ def checkout(request):
 
 
 
+@login_required
 def success(request):
     return render(request, "success.html")
 
 
+@login_required
 def my_orders(request):
 
     orders = Order.objects.filter(user=request.user).order_by('-created_at')
@@ -295,6 +310,7 @@ def my_orders(request):
 
 
 
+@login_required
 def cancel_order(request, order_id):
     order = Order.objects.get(id=order_id, user=request.user)
 
