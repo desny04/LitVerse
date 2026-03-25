@@ -123,6 +123,8 @@
                 <img src="{{ book.image.url }}" width="100px">
             </div>
 
+            </a>
+
             <div class="category-prodwish">
                 
                 <div class="category">
@@ -130,7 +132,11 @@
                 </div>
 
                 <div class="wishlist-prod">
-                    <div class="wishlist-icon">❤</div>
+                    <div class="wishlist-icon 
+{% if book.id|stringformat:"s" in request.session.wishlist %}active{% endif %}"
+onclick="toggleWishlist('{{ book.id }}', this)">
+❤
+</div>
                 </div>
 
             </div>
@@ -143,7 +149,6 @@
                 <p>{{ book.author }}</p>
             </div>
 
-            </a>
 
             <div class="price-addcart">
                 <div class="price">
@@ -212,6 +217,29 @@
 
 
     <div class="copyright"><p>© 2026 BookStore. All rights reserved.</p></div>
+
+
+
+    <script>
+
+        function toggleWishlist(bookId, element){
+
+        fetch("/toggle-wishlist/" + bookId + "/")
+        .then(response => response.json())
+        .then(data => {
+
+        if(data.in_wishlist){
+            element.classList.add("active")
+        }else{
+            element.classList.remove("active")
+        }
+
+        })
+
+        }
+
+    </script>
+
 
     <script>
         function toggleChatbox() {

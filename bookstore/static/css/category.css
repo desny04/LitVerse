@@ -297,6 +297,10 @@ border-right:1px solid rgba(255,255,255,0.2);
     color: grey;
 }
 
+.wishlist-icon.active{
+    color: red;
+}
+
 .category{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: small;
