@@ -5,8 +5,11 @@ from decimal import Decimal
 from .models import Book
 from .models import Order, OrderItem
 from django.core.mail import send_mail
-from django.conf import settings
+from django.conf import settings        
 from django.contrib.auth.decorators import login_required
+import razorpay
+import traceback
+from django.views.decorators.csrf import csrf_exempt
 
 @login_required
 def home(request):
@@ -292,6 +295,84 @@ def checkout(request):
     return render(request, "checkout.html")
 
 
+
+
+@login_required
+@csrf_exempt
+def create_razorpay_order(request):
+    try:
+        import json
+        import razorpay
+
+        data = json.loads(request.body)
+
+        cart = request.session.get('cart', {})
+        total = 0
+
+        for book_id, quantity in cart.items():
+            book = Book.objects.get(id=book_id)
+            total += book.price * quantity
+
+        client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
+        payment_data = {
+            "amount": int(total * 100),
+            "currency": "INR"
+        }
+
+        razorpay_order = client.order.create(data=payment_data)
+
+        order = Order.objects.create(
+            user=request.user,
+            name=data['name'],
+            email=data['email'],
+            address=data['address'],
+            payment_method="razorpay",
+            total=total,
+            razorpay_order_id=razorpay_order['id']
+        )
+
+        
+
+        send_mail(
+            subject="Order Placed - LitVerse",
+            message=f"""
+        Hi {data['name']},
+        Your order has been placed successfully 🎉
+        Thank you for shopping with LitVerse 📚
+        """,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[data['email']],
+            fail_silently=False,
+        )
+
+        for book_id, quantity in cart.items():
+            book = Book.objects.get(id=book_id)
+            OrderItem.objects.create(order=order, book=book, quantity=quantity)
+
+        return JsonResponse({
+            "order_id": razorpay_order['id'],
+            "key": settings.RAZORPAY_KEY_ID,
+            "amount": payment_data["amount"]
+        })
+
+    except Exception as e:
+        print("ERROR:", str(e))
+        print(traceback.format_exc())
+
+
+        return JsonResponse({
+            "error": str(e)
+        }, status=500)
+
+
+@login_required
+@csrf_exempt
+def clear_cart(request):
+    request.session['cart'] = {}
+    return JsonResponse({"message": "Cart cleared"})
+
+    
 
 @login_required
 def success(request):

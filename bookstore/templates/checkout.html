@@ -101,7 +101,7 @@
 
 
 
-    <form method="POST">
+    <form method="POST" id="checkout-form">
         {% csrf_token %}
 
         <div class="form-group">
@@ -125,7 +125,7 @@
             <div class="payment-options">
 
                 <label>
-                    <input type="radio" name="payment" value="cod" required>
+                    <input type="radio" name="payment" value="cod" checked>
                     Cash on Delivery
                 </label>
 
@@ -291,6 +291,89 @@
             }
         });
     </script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+
+    <script>
+function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+document.getElementById("checkout-form").addEventListener("submit", function(e){
+
+    let selected = document.querySelector('input[name="payment"]:checked');
+
+    if(!selected){
+        alert("Please select a payment method");
+        return;
+    }
+
+    let paymentMethod = selected.value;
+
+    console.log("Payment:", paymentMethod);
+
+    // ✅ COD → normal submit
+    if(paymentMethod === "cod"){
+        return true;
+    }
+
+    // 💳 UPI / Card → Razorpay
+    if(paymentMethod === "upi" || paymentMethod === "card"){
+        e.preventDefault();
+
+        fetch("{% url 'create_razorpay_order' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": getCSRFToken(),
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: document.querySelector('[name="name"]').value,
+                email: document.querySelector('[name="email"]').value,
+                address: document.querySelector('[name="address"]').value
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            console.log("Razorpay response:", data);
+
+            var options = {
+                "key": data.key,
+                "amount": data.amount,
+                "currency": "INR",
+                "name": "LitVerse",
+                "description": "Book Purchase",
+                "order_id": data.order_id,
+
+                // ✅ ADD THIS PART
+                "handler": function (response){
+
+                    fetch("/clear-cart/", {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": getCSRFToken()
+                        }
+                    }).then(() => {
+                        window.location.href = "/success/";
+                    });
+
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        })
+        .catch(err => {
+            console.error("Error:", err);
+            alert("Payment failed. Check console.");
+        });
+    }
+});
+</script>
+
 
 </body>
 </html>

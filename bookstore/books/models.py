@@ -63,6 +63,8 @@ class Order(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    razorpay_order_id = models.CharField(max_length=255, blank=True, null=True)
+
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
