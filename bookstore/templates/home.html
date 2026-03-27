@@ -79,7 +79,9 @@
 
     <div class="categories_btns">
 
-       
+        <div class="all_books">
+            <a href="?category=all" class="{% if category == 'all' %}active{% endif %}"><button>All Books</button></a>
+        </div>
 
         <div class="fiction">
             <a href="?category=fiction" class="{% if category == 'fiction' %}active{% endif %}"><button>Fiction</button></a>
